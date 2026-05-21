@@ -14,3 +14,10 @@ h1{
   object-fit: cover;
   object-position: top;
 }
+
+.intro__p{
+    padding: 40px;
+    background-color: $c-alt;
+    color: $c-text-b;
+    font-size: $size-text;
+}
