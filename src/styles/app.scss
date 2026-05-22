@@ -1,7 +1,12 @@
 @import '../../node_modules/modern-normalize/modern-normalize.css';
 
 @import 'utils/variables';
-@import 'components/type';
-@import 'components/career';
+@import 'utils/reset';
+@import 'utils/fonts';
 
-@import 'main';
+@import 'base';
+
+@import 'components/typography';
+@import 'components/layout';
+
+@import 'pages/career';

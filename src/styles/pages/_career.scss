@@ -1,0 +1,13 @@
+
+.intro__p{
+  padding: 40px;
+  background-color: $c-alt;
+  color: $c-text-b;
+}
+
+.role{
+  &__p,
+  &__li {
+    padding-left: 30px;
+  }
+}

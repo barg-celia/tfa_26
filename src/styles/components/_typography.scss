@@ -1,0 +1,11 @@
+.heading {
+  &--h1 {
+    font-family: $font-title;
+    font-size: $size-title-m;
+  }
+
+  &--h2 {
+    font-family: $font-subtitle;
+    font-size: $size-subtitle-m;
+  }
+}
