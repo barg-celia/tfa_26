@@ -1,5 +1,6 @@
 h1{
-    font-family: $font-title;
+  font-family: $font-title;
+  font-size: $size-title-m;
 }
 
 .hero {
@@ -16,8 +17,8 @@ h1{
 }
 
 .intro__p{
-    padding: 40px;
-    background-color: $c-alt;
-    color: $c-text-b;
-    font-size: $size-text;
+  padding: 40px;
+  background-color: $c-alt;
+  color: $c-text-b;
+  font-size: $size-text-m;
 }
