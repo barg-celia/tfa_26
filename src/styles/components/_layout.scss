@@ -38,13 +38,32 @@
   .card {
     display: block; 
     width: 100%;
-    max-width: 280px;
+    max-width: 250px;
     height: 140px;
 
     background-color: #d9d9d9;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    border-radius: 15px;
+
     text-decoration: none;
+
+    &__paddock{
+      background-image: url(../../assets/img/paddock.png);
+    }
+    &__setup{
+      background-image: url(../../assets/img/setup.png);
+    }
+    &__impact{
+      background-image: url(../../assets/img/impact.png);
+    }
+    &__career{
+      background-image: url(../../assets/img/carrer.png);
+    }
   }
 }
+
 .footer {
   position: relative;
   padding: 10px 16px 16px;
