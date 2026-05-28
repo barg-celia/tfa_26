@@ -45,13 +45,34 @@
     text-decoration: none;
   }
 }
+.footer {
+  position: relative;
+  padding: 10px 16px 16px;
+  text-align: center;
 
-.footer::before {
+  &::before {
     content: "";
     display: block;
-    width: 200px;              
-    height: 4px;               
-    background-color: #F80000; 
-    margin: 40px auto 20px auto;  
-    border-radius: 5px;        
+    width: 200px;
+    height: 4px;
+    background-color: #F80000;
+    margin: 40px auto 20px auto;
+    border-radius: 5px;
+  }
+
+  &__social,
+  &__infos {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    gap: 16px;
+    margin-bottom: 16px;
+    flex-wrap: wrap;
+  }
+
+  & a{
+    color: black;
+    text-decoration: none;
+  }
 }
