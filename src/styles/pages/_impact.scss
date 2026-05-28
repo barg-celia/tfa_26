@@ -1,0 +1,56 @@
+.image-box {
+  position: relative;
+  width: 100%;
+  max-width: 350px;
+  height: 220px;
+
+  background-image: url("../../assets/img/impact.png");
+  background-size: cover;
+  background-position: center;
+
+  border-radius: 12px;
+  overflow: hidden;
+
+  .btn {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    z-index: 2;
+
+    padding: 10px 14px;
+    border: none;
+    border-radius: 8px;
+    background: white;
+    font-size: 14px;
+  }
+
+  .overlay {
+    position: absolute;
+    inset: 0;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    background: rgba(0, 0, 0, 0.65);
+    color: white;
+
+    opacity: 0;
+    transform: translateY(10px);
+    transition: 0.25s ease;
+
+    pointer-events: none;
+
+    p {
+      font-size: 16px;
+      text-align: center;
+      padding: 20px;
+    }
+
+    &.active {
+      opacity: 1;
+      transform: translateY(0);
+      pointer-events: auto;
+    }
+  }
+}
