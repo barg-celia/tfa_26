@@ -1,76 +1,104 @@
-const positiveItems = [
-  {
-    text : "Expérience unique (peut être addictive) → l’expérience est comparable à un saut en parachute car ça permet de prouver le courage, le dépassement de soi, la capacité à gérer le stress.",
-    image : "images/positive1.jpg",
-  },
-  {
-    text : "text2",
-    image : "images/positive2.jpg",
-  },
-  {
-    text : "Text3",
-    image : "images/positive3.jpg",
-  },
-];
+const positiveBox = document.getElementById("positive-box");
+if (positiveBox){
 
-const negativeItems = [
-  {
-    text : "Text1",
-    image : "images/negative1.jpg",
-  },
-  {
-    text : "text2",
-    image : "images/negative2.jpg",
-  },
-  {
-    text : "Text3",
-    image : "images/negative3.jpg",
-  },
-];
-
-let index = 0;
-
-const btn = document.querySelector(".btn");
-const overlay = document.querySelector(".image-box .overlay");
-const text = document.getElementById("consequence-text");
-
-const prevBtn = document.getElementById("prev-btn");
-const nextBtn = document.getElementById("next-btn");
-
-function updateText() {
-  text.textContent = consequences[index];
-}
-
-if (btn && overlay){
-  btn.addEventListener("click", () => {
-    overlay.classList.toggle("active");
+  const positiveItems = [
+    {
+      text : "Expérience unique (peut être addictive) → l’expérience est comparable à un saut en parachute car ça permet de prouver le courage, le dépassement de soi, la capacité à gérer le stress.",
+      image : "../../assets/img/",
+    },
+    {
+      text : "text2",
+      image : "../../assets/img/",
+    },
+    {
+      text : "Text3",
+      image : "../../assets/img/",
+    },
+  ];
   
-    btn.textContent = overlay.classList.contains("active")
+  const negativeItems = [
+    {
+      text : "Text1",
+      image : "../../assets/img/",
+    },
+    {
+      text : "text2",
+      image : "../../assets/img/",
+    },
+    {
+      text : "Text3",
+      image : "../../assets/img/",
+    },
+  ];
+  
+  // fct carousel : items = la liste des éléments, boxId = id de la boite, textId = id du text ,btn class = la class du btn ,prevId = btn précédent, nextId = btn suivant
+  function setupCarousel(items, boxId, textId, btnClass, prevId, nextId) {
+    let index = 0;
+    
+    const box = document.getElementById(boxId); // récuperer l'id de la box
+    const overlay = box.querySelector(".overlay"); // cherche dans la box l'élément overlay
+    const btn = box.querySelector(btnClass); // cherche le btn avec la classe passée
+    const text = document.getElementById(textId); // récupere l'id du text
+    
+    const prevBtn = document.getElementById(prevId); // récuperer le btn prev
+    const nextBtn = document.getElementById(nextId); // récuperer le btn next
+    
+    function updateContent() { // fct pour changer l'affichage
+      text.textContent = items[index].text; // changer le text
+      box.style.backgroundImage = `url("${items[index].image}")`; // changer l'image
+    }
+    
+    // btn pour afficher ou masquer le text
+    btn.addEventListener("click", () => {
+      overlay.classList.toggle("active");
+      
+      btn.textContent = overlay.classList.contains("active")
       ? "Cacher"
       : "Afficher";
-  });
-}
-
-if (nextBtn){
-  nextBtn.addEventListener("click", () => {
-    index++;
+    });
+    
+    // btn next 
+    nextBtn.addEventListener("click", () => {
+      index++; 
+      
+      if (index >= items.length) {
+        index = 0;
+      }
+      
+      updateContent();
+    });
+    
+    // btn prev
+    prevBtn.addEventListener("click", () => {
+      index--;
+      
+      if (index < 0) {
+        index = items.length - 1;
+      }
+      
+      updateContent();
+    });
+    
+    updateContent();
+  }
   
-    if (index >= consequences.length) {
-      index = 0;
-    }
+  // Appeler la fct positive
+  setupCarousel(
+    positiveItems,
+    "positive-box",
+    "positive-text",
+    ".positive-btn",
+    "prev-positive",
+    "next-positive"
+  );
   
-    updateText();
-  });
-}
-
-if(prevBtn){
-  prevBtn.addEventListener("click", () => {
-    index--;
-  
-    if (index < 0) {
-      index = consequences.length - 1;
-    }
-  
-    updateText();
-  });
+  // Appeler la fct négative
+  setupCarousel(
+    negativeItems,
+    "negative-box",
+    "negative-text",
+    ".negative-btn",
+    "prev-negative",
+    "next-negative"
+  );
 }
