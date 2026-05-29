@@ -1,9 +1,31 @@
-const consequences = [
-  "Expérience unique (peut être addictive) → l’expérience est comparable à un saut en parachute car ça permet de prouver le courage, le dépassement de soi, la capacité à gérer le stress.",
+const positiveItems = [
+  {
+    text : "Expérience unique (peut être addictive) → l’expérience est comparable à un saut en parachute car ça permet de prouver le courage, le dépassement de soi, la capacité à gérer le stress.",
+    image : "images/positive1.jpg",
+  },
+  {
+    text : "text2",
+    image : "images/positive2.jpg",
+  },
+  {
+    text : "Text3",
+    image : "images/positive3.jpg",
+  },
+];
 
-  "Deuxième conséquence → ici tu mets ton deuxième texte.",
-
-  "Troisième conséquence → ici tu mets ton troisième texte."
+const negativeItems = [
+  {
+    text : "Text1",
+    image : "images/negative1.jpg",
+  },
+  {
+    text : "text2",
+    image : "images/negative2.jpg",
+  },
+  {
+    text : "Text3",
+    image : "images/negative3.jpg",
+  },
 ];
 
 let index = 0;
