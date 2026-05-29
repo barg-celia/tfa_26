@@ -19,30 +19,36 @@ function updateText() {
   text.textContent = consequences[index];
 }
 
-btn.addEventListener("click", () => {
-  overlay.classList.toggle("active");
+if (btn && overlay){
+  btn.addEventListener("click", () => {
+    overlay.classList.toggle("active");
+  
+    btn.textContent = overlay.classList.contains("active")
+      ? "Cacher"
+      : "Afficher";
+  });
+}
 
-  btn.textContent = overlay.classList.contains("active")
-    ? "Cacher"
-    : "Afficher";
-});
+if (nextBtn){
+  nextBtn.addEventListener("click", () => {
+    index++;
+  
+    if (index >= consequences.length) {
+      index = 0;
+    }
+  
+    updateText();
+  });
+}
 
-nextBtn.addEventListener("click", () => {
-  index++;
-
-  if (index >= consequences.length) {
-    index = 0;
-  }
-
-  updateText();
-});
-
-prevBtn.addEventListener("click", () => {
-  index--;
-
-  if (index < 0) {
-    index = consequences.length - 1;
-  }
-
-  updateText();
-});
+if(prevBtn){
+  prevBtn.addEventListener("click", () => {
+    index--;
+  
+    if (index < 0) {
+      index = consequences.length - 1;
+    }
+  
+    updateText();
+  });
+}
