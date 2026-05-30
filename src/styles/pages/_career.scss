@@ -5,3 +5,23 @@
   color: $c-text-b;
   margin-left: 0;
 }
+
+.role {
+  position: relative;
+  padding-left: 2.5rem;
+
+  &::before {
+    content: "";
+    position: absolute;
+    left: 3.5rem;
+    top: 10rem;      
+    bottom: -0.2rem; 
+    width: 3px;
+    background-color: $c-f1;
+  }
+
+  // dernière section : on coupe la ligne
+  &:last-of-type::before {
+    bottom: 0.5rem;
+  }
+}
