@@ -5,8 +5,15 @@
 }
 
 .li__puce{
-    margin-top: 5px;
+    margin-top: 5px; 
+    
+    &::before{
+        content: "🛞";
+        margin-right: 8px;
+        font-size: 1.3rem;
+    }
 }
+
 .ul__puce{
     margin-left: 30px;
 }
