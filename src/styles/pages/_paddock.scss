@@ -17,3 +17,13 @@
 .ul__puce{
     margin-left: 30px;
 }
+
+.num::after {
+  content: "";
+  display: inline-block;
+  width: 120px;
+  height: 3px;
+  background: $c-f1;
+  margin-left: 12px;
+  border-radius: 99px;
+}
