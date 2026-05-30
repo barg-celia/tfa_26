@@ -19,9 +19,4 @@
     width: 3px;
     background-color: $c-f1;
   }
-
-  // dernière section : on coupe la ligne
-  &:last-of-type::before {
-    bottom: 0.5rem;
-  }
 }
