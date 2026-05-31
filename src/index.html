@@ -21,42 +21,29 @@
     <meta property="og:image:height" content="945">
   </head>
 <body class="body">
-   <div class="scene">
-        <div class="car-target"><img src="F1_r.svg" alt="" class="f1"></div>
-        <div class="node" id="impact">
-            <div class="dot"></div>
-            <div class="label">RACE IMPACT</div>
-            
-            <svg class="connector-svg" width="300" height="200">
-                <path class="line" d="M 0 0 L 300 150" /> 
-            </svg>
-        </div>
-        <div class="node" id="paddock">
-            <div class="dot"></div>
-            <div class="label">PADDOCK EXPERIENCE</div>
-            
-            <svg class="connector-svg" width="300" height="200">
-                <path class="line" d="M 300 0 L 0 90" /> 
-            </svg>
-        </div>
-        <div class="node" id="setup">
-            <div class="dot"></div>
-            <div class="label">RACE SETUP</div>
-            
-            <svg class="connector-svg" width="300" height="200">
-                <path class="line" d="M 0 80 L 250 0" />
-            </svg>
-        </div>
-        <div class="node" id="career">
-            <div class="dot"></div>
-            <div class="label">RACE CAREER</div>
-            
-            <svg class="connector-svg" width="300" height="200">
-                <path class="line" d="M 200 20 L 40 170" /> 
-            </svg>
-        </div>
-
-        <h1>Be the driver</h1>
+  <div class="scene">
+    <h1 class="signature">Be the driver</h1>
+    <div class="node pos-1" id="career">
+      <div class="dot"></div>
+      <div class="label">Race Career</div>
+      <svg class="connector-svg"><path class="line" id="path-career" d="M 0 0 L 0 0" /></svg>
     </div>
+    <div class="node pos-2" id="paddock">
+      <div class="dot"></div>
+      <div class="label">Paddock experience</div>
+      <svg class="connector-svg"><path class="line" id="path-paddock" d="M 0 0 L 0 0" /></svg>
+    </div>
+    <div class="node pos-3" id="setup">
+      <div class="dot"></div>
+      <div class="label">Race setup</div>
+      <svg class="connector-svg"><path class="line" id="path-setup" d="M 0 0 L 0 0" /></svg>
+    </div>
+    <div class="node pos-4" id="impact">
+      <div class="dot"></div>
+      <div class="label">Race impact</div>
+      <svg class="connector-svg"><path class="line" id="path-impact" d="M 0 0 L 0 0" /></svg>
+    </div>
+    <div class="car-placeholder"><img src="assets/img/F1.svg" alt=""></div>
+  </div>
 </body>
 </html>
