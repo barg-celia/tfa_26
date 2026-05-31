@@ -1,18 +1,178 @@
-.body{
+body {
     background-color: $c-alt;
 }
 
-.scene{
+.scene {
     position: relative;
     width: 100vw;
     height: 100vh;
 }
 
 .signature {
-    font-size: 20px;
+    font-size: 2rem;
     display: flex;
     justify-content: center;
     text-align: center;
     color: $c-text-b;
     font-family: $font-title;
+}
+
+.car-placeholder {
+    position: absolute;
+    bottom: 40px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    img {
+        width: 300px;
+        height: auto;
+    }
+}
+
+.node {
+    position: absolute;
+    width: 30px;
+    height: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 10;
+    -webkit-tap-highlight-color: transparent;
+
+    .dot {
+        width: 20px;
+        height: 20px;
+        border-radius: 90%;
+        background: $c-bg;
+        transition: all 0.3s ease;
+        animation: float 5s ease-in-out infinite;
+    }
+
+    .label {
+        position: absolute;
+        color: $c-text-b;
+        opacity: 0;
+        transition: all 0.4s ease;
+        white-space: nowrap;
+        font-size: 2rem;
+        padding: 6px 10px;
+        pointer-events: none;
+        font-family: $font-subtitle;
+    }
+
+    &.active {
+        .dot {
+            background: $c-f1;
+            box-shadow: 0 0 20px $c-f1;
+            animation: none;
+        }
+
+        .label {
+            opacity: 1;
+            transform: translateX(0);
+        }
+
+        .line {
+            stroke-dashoffset: 0;
+        }
+    }
+}
+
+.pos-1 {
+    top: 100px;
+    left: 40px;
+
+    .dot {
+        animation-delay: 0s;
+    }
+
+    .label {
+        left: 20px;
+        transform: translateX(-10px);
+    }
+}
+
+.pos-2 {
+    top: 220px;
+    left: 45px;
+
+    .dot {
+        animation-delay: .4s;
+    }
+
+    .label {
+        left: 20px;
+        transform: translateX(-10px);
+    }
+}
+
+.pos-3 {
+    top: 140px;
+    right: 40px;
+
+    .dot {
+        animation-delay: .8s;
+    }
+
+    .label {
+        right: 20px;
+        transform: translateX(10px);
+    }
+}
+
+.pos-4 {
+    top: 260px;
+    right: 45px;
+
+    .dot {
+        animation-delay: 1.2s;
+    }
+
+    .label {
+        right: 20px;
+        transform: translateX(10px);
+    }
+}
+
+.connector-svg {
+    position: absolute;
+    top: 15px;
+    left: 15px;
+    overflow: visible;
+    pointer-events: none;
+}
+
+.line {
+    fill: none;
+    stroke: $c-f1;
+    stroke-width: 1.5;
+    stroke-dasharray: 600;
+    stroke-dashoffset: 600;
+    transition: stroke-dashoffset 0.5s ease-out;
+}
+
+// animation flottante
+@keyframes float {
+    0% {
+        transform: translate(0, 0);
+    }
+
+    25% {
+        transform: translate(3px, -4px);
+    }
+
+    50% {
+        transform: translate(-2px, 3px);
+    }
+
+    75% {
+        transform: translate(4px, 2px);
+    }
+
+    100% {
+        transform: translate(0, 0);
+    }
 }

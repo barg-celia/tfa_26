@@ -103,3 +103,51 @@ if (positiveBox){
     "next-negative"
   );
 }
+
+
+document.addEventListener("DOMContentLoaded", () => {
+    const nodes = document.querySelectorAll('.node');
+    
+    // Fonction pour appliquer les bonnes coordonnées de lignes SVG
+    function updateLines() {
+        const isPC = window.innerWidth >= 1024;
+        
+        if (isPC) {
+            // Coordonnées des lignes pour la version PC (3 haut, 1 bas)
+            document.getElementById('path-career').setAttribute('d', 'M 0 0 L 150 160');
+            document.getElementById('path-paddock').setAttribute('d', 'M 0 0 L 0 170');
+            document.getElementById('path-setup').setAttribute('d', 'M 0 0 L -120 150');
+            document.getElementById('path-impact').setAttribute('d', 'M 0 0 L 0 -100');
+        } else {
+            // Coordonnées des lignes pour la version Mobile (2 gauche vers le bas, 2 droite vers le bas)
+            document.getElementById('path-career').setAttribute('d', 'M 0 0 L 120 400');
+            document.getElementById('path-paddock').setAttribute('d', 'M 0 0 L 115 280');
+            document.getElementById('path-setup').setAttribute('d', 'M 0 0 L -120 360');
+            document.getElementById('path-impact').setAttribute('d', 'M 0 0 L -125 240');
+        }
+    }
+
+    // Gestion du clic (Uniquement utile pour le Mobile)
+    nodes.forEach(node => {
+        node.addEventListener('click', (e) => {
+            // Si on est sur PC, on laisse le CSS Hover faire son travail
+            if (window.innerWidth >= 1024) return;
+
+            // Si le point est déjà actif sur mobile, on simule l'action/redirection
+            if (node.classList.contains('active')) {
+                console.log("Navigation vers : " + node.querySelector('.label').innerText);
+                return;
+            }
+
+            // Sinon, on nettoie et on active le point cliqué
+            nodes.forEach(n => n.classList.remove('active'));
+            node.classList.add('active');
+        });
+    });
+
+    // Écoute le changement de taille de l'écran pour mettre à jour les lignes
+    window.addEventListener('resize', updateLines);
+    
+    // Initialisation au chargement
+    updateLines();
+});
