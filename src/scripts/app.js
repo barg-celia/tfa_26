@@ -106,6 +106,9 @@ if (positiveBox){
 
 
 document.addEventListener("DOMContentLoaded", () => {
+    if (!document.body.classList.contains('body')) {
+        return; 
+    }
     const nodes = document.querySelectorAll('.node');
     
     // Fonction pour appliquer les bonnes coordonnées de lignes SVG
@@ -127,7 +130,7 @@ document.addEventListener("DOMContentLoaded", () => {
         }
     }
 
-    // Gestion du clic (Uniquement utile pour le Mobile)
+    // Gestion du clic 
     nodes.forEach(node => {
         node.addEventListener('click', (e) => {
             // Si on est sur PC, on laisse le CSS Hover faire son travail
