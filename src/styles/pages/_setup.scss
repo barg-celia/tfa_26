@@ -22,3 +22,34 @@
 .p__normal{
     margin: 0;
 }
+body {
+    position: relative;
+    overflow-x: hidden;
+
+    .circuit-line {
+        position: absolute;
+        inset: 0;
+        width: 100%;
+        height: 100%;
+        z-index: -1;
+        pointer-events: none;
+        opacity: 0.3;
+
+        .track {
+            fill: none;
+            stroke: $c-f1;
+            stroke-linecap: round;
+            stroke-linejoin: round;
+        }
+
+        .outer {
+            stroke: $c-f1;
+            stroke-width: 4;
+        }
+
+        .inner {
+            stroke-width: 2;
+            stroke-dasharray: 12 8;
+      }
+    }
+}
