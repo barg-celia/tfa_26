@@ -4,6 +4,7 @@
   width: 100%;
   height: 40vh; 
   overflow: hidden;
+  position: relative;
   img {
     width: 100%;
     height: 100%;
@@ -11,7 +12,17 @@
     object-position: top;
     }
 }
-
+.btn-retour {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    padding: 10px;
+    background: rgba(255,255,255,0.9);
+    color: $c-text;
+    text-decoration: none;
+    border-radius: 15px;
+    font-family: $font-body;
+}
 .pages {
   display: flex;
   flex-direction: column;
