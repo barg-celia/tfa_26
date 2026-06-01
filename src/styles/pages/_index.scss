@@ -105,11 +105,19 @@
 .pos-1 {
     top: 100px;
     left: 40px;
+    .dot {
+        animation-delay: 0s;
+        animation-duration: 4.8s;
+    }
 }
 
 .pos-2 {
     top: 220px;
     left: 45px;
+    .dot {
+        animation-delay: 1.2s;
+        animation-duration: 5.6s;
+    }   
 }
 
 .pos-1, .pos-2 {
@@ -122,11 +130,19 @@
 .pos-3 {
     top: 140px;
     right: 40px;
+    .dot {
+        animation-delay: 2.4s;
+        animation-duration: 4.3s;
+    }
 }
 
 .pos-4 {
     top: 260px;
     right: 45px;
+    .dot {
+        animation-delay: 3.1s;
+        animation-duration: 5.2s;
+    }
 }
 
 .pos-3, .pos-4 {
