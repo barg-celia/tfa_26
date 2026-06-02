@@ -227,6 +227,11 @@
             font-size: $size-subtitle-t;
         }
     }
+    .pos-1{
+        .label{
+            top: -10px;
+        }
+    }
     .pos-3 {
         top: 25%;
         right: 15%;
@@ -246,7 +251,11 @@
             font-size: $size-subtitle-t;
         }
     }
-
+    .pos-3{
+        .label{
+            top: -10px;
+        }
+    }
     .node:hover {
 
         .dot {
@@ -298,6 +307,11 @@
             left: 50px;
             transform: translateX(-10px);
             font-size: $size-subtitle-d;
+        }
+    }
+    .pos-1{
+        .label{
+            top: -10px;
         }
     }
     .pos-3 {
