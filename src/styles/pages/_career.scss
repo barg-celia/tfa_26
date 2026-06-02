@@ -28,7 +28,14 @@
 @media (min-width: 1024px){
   .intro__p{
     margin: 0;
-    font-size: $size-text-d;
+    font-size: $size-subtitle-d;
     padding: 80px;
+  }
+  .role{
+    padding-left: 20rem;
+    padding-right: 30rem;
+    &::before{
+      left: 20.5rem;
+    }
   }
 }

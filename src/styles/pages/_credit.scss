@@ -28,7 +28,7 @@
     margin-left: 30px;
 }
 
-.heading--h2{
+.heading--h2c{
     margin-left: 30px;
 }
 
@@ -45,13 +45,13 @@
     .heading--h1c{
         font-size: $size-title-t;
     }
-    .heading--h2{
+    .heading--h2c{
         font-size: $size-subtitle-t;
     }
-    p, .a__credit{
+    .p__credit, .a__credit{
         font-size: $size-text-t;
     }
-    p, .heading--h2, .a__credit{
+    .p__credit, .heading--h2c, .a__credit{
         margin-left: 150px;
     }
 }
@@ -60,13 +60,13 @@
     .heading--h1c{
         font-size: $size-title-d;
     }
-    .heading--h2{
+    .heading--h2c{
         font-size: $size-subtitle-d;
     }
-    p, .a__credit{
+    .p__credit, .a__credit{
         font-size: $size-text-d;
     }
-    p, .heading--h2, .a__credit{
+    .p__credit, .heading--h2c, .a__credit{
         margin-left: 200px;
     }
 }

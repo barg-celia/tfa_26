@@ -14,3 +14,13 @@ p{
   margin-top: 20px;
   margin-left: 30px;
 }
+
+@media (min-width : 768px){
+
+}
+
+@media (min-width : 1024px){
+  body{
+    font-size: $size-text-d;
+  }
+}

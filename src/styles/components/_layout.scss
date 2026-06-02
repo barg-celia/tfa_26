@@ -107,7 +107,13 @@
 }
 
 @media (min-width: 768px){
-
+  .pages{
+    flex-direction: row;
+    justify-content: center;
+    .item{
+      width: 45%;
+    }
+  }
 }
 
 @media (min-width: 1024px){
@@ -118,5 +124,16 @@
     font-size: $size-text-d;
     top: 50px;
     left: 50px;
+  }
+  .pages{
+    gap: 80px;
+    .item{
+      width: 25%;
+    }
+    .card{
+      width: 100%;
+      max-width: 300px;
+      height: 200px;
+    }
   }
 }
