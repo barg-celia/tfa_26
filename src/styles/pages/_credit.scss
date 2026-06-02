@@ -1,0 +1,34 @@
+.btn-retour--credit{
+    top: 20px;
+    left: 20px;
+    padding: 10px;
+    position: fixed;
+    text-decoration: none;
+    background-color: rgba(255,255,255,0.9);
+    color: $c-text;
+    border-radius: 15px;
+    font-family: $font-body;
+}
+
+.heading--h1{
+    margin-top: 80px
+}
+
+.credit{
+    background-color: $c-alt;
+    color: $c-text-b;
+}
+
+.a__credit{
+    color: $c-text-b;
+    margin-left: 30px;
+}
+
+.heading--h2{
+    margin-left: 30px;
+}
+
+p{
+    margin-right: 30px;
+    margin-bottom: 20px;
+}
