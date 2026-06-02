@@ -16,7 +16,9 @@ p{
 }
 
 @media (min-width : 768px){
-
+  body{
+    font-size: $size-text-t;
+  }
 }
 
 @media (min-width : 1024px){

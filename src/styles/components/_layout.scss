@@ -107,6 +107,9 @@
 }
 
 @media (min-width: 768px){
+  .hero{
+    height: 80vh;
+  }
   .pages{
     flex-direction: row;
     justify-content: center;

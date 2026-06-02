@@ -12,7 +12,14 @@
 }
 
 @media (min-width: 768px){
-
+  .heading{
+    &--h1{
+      font-size: $size-title-t;
+    }
+    &--h2{
+      font-size: $size-subtitle-t;
+    }
+  }
 }
 
 @media (min-width: 1024px){
