@@ -11,7 +11,11 @@
 }
 
 .heading--h1c{
-    margin-top: 80px
+    margin-top: 80px;
+    font-family: $font-title;
+    text-align: center;
+    justify-content: center;
+    display: flex;
 }
 
 .credit{
@@ -28,7 +32,7 @@
     margin-left: 30px;
 }
 
-p{
+.p__credit{
     margin-right: 30px;
     margin-bottom: 20px;
 }
@@ -38,7 +42,7 @@ p{
 }
 
 @media (min-width: 768px){
-    .heading--h1{
+    .heading--h1c{
         font-size: $size-title-t;
     }
     .heading--h2{
@@ -53,7 +57,7 @@ p{
 }
 
 @media (min-width: 1024px){
-    .heading--h1{
+    .heading--h1c{
         font-size: $size-title-d;
     }
     .heading--h2{
