@@ -113,28 +113,38 @@ document.addEventListener("DOMContentLoaded", () => {
     
     // Fonction pour appliquer les bonnes coordonnées de lignes SVG
     function updateLines() {
-        const isPC = window.innerWidth >= 1280;
-        
-        if (isPC) {
-            // Coordonnées des lignes pour la version PC 
-            document.getElementById('path-career').setAttribute('d', 'M 0 0 L 150 160');
-            document.getElementById('path-paddock').setAttribute('d', 'M 0 0 L 0 170');
-            document.getElementById('path-setup').setAttribute('d', 'M 0 0 L -120 150');
-            document.getElementById('path-impact').setAttribute('d', 'M 0 0 L 0 -100');
-        } else {
-            // Coordonnées des lignes pour la version Mobile 
-            document.getElementById('path-career').setAttribute('d', 'M 0 0 L 120 400');
-            document.getElementById('path-paddock').setAttribute('d', 'M 0 0 L 115 280');
-            document.getElementById('path-setup').setAttribute('d', 'M 0 0 L -120 360');
-            document.getElementById('path-impact').setAttribute('d', 'M 0 0 L -125 240');
-        }
-    }
+
+    const car = document.getElementById("car");
+
+    if (!car) return;
+
+    const carRect = car.getBoundingClientRect();
+
+    const carCenterX = carRect.left + carRect.width / 2;
+    const carCenterY = carRect.top + carRect.height / 2;
+
+    document.querySelectorAll(".node").forEach(node => {
+
+        const svg = node.querySelector(".connector-svg");
+        const path = svg.querySelector(".line");
+
+        const nodeRect = node.getBoundingClientRect();
+
+        const nodeCenterX = nodeRect.left + nodeRect.width / 2;
+        const nodeCenterY = nodeRect.top + nodeRect.height / 2;
+
+        const dx = carCenterX - nodeCenterX;
+        const dy = carCenterY - nodeCenterY;
+
+        path.setAttribute("d", `M 0 0 L ${dx} ${dy}`);
+    });
+}
 
     // Gestion du clic 
     nodes.forEach(node => {
         node.addEventListener('click', (e) => {
             // Si pc alors c'est le hoover qui fonctionne
-            if (window.innerWidth >= 1024) return;
+            if (window.innerWidth >= 768) return;
 
             if (node.classList.contains('active')) {
                 console.log("Navigation vers : " + node.querySelector('.label').innerText);
@@ -147,6 +157,10 @@ document.addEventListener("DOMContentLoaded", () => {
         });
     });
     window.addEventListener('resize', updateLines);
+
+    const carImage = document.querySelector('#car img');
+
+    carImage.addEventListener('load', updateLines);
     
     updateLines();
 });
