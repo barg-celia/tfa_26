@@ -4,13 +4,13 @@
     padding: 10px;
     position: fixed;
     text-decoration: none;
-    background-color: rgba(255,255,255,0.9);
+    background-color: rgba(216, 214, 214, 0.9);
     color: $c-text;
     border-radius: 15px;
     font-family: $font-body;
 }
 
-.heading--h1{
+.heading--h1c{
     margin-top: 80px
 }
 
@@ -31,4 +31,38 @@
 p{
     margin-right: 30px;
     margin-bottom: 20px;
+}
+.btn-retour--credit:hover{
+    background-color: $c-bg;
+    color: $c-f1;
+}
+
+@media (min-width: 768px){
+    .heading--h1{
+        font-size: $size-title-t;
+    }
+    .heading--h2{
+        font-size: $size-subtitle-t;
+    }
+    p, .a__credit{
+        font-size: $size-text-t;
+    }
+    p, .heading--h2, .a__credit{
+        margin-left: 150px;
+    }
+}
+
+@media (min-width: 1024px){
+    .heading--h1{
+        font-size: $size-title-d;
+    }
+    .heading--h2{
+        font-size: $size-subtitle-d;
+    }
+    p, .a__credit{
+        font-size: $size-text-d;
+    }
+    p, .heading--h2, .a__credit{
+        margin-left: 200px;
+    }
 }

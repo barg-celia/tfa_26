@@ -10,3 +10,15 @@
     font-size: $size-subtitle-m;
   }
 }
+
+@media (min-width: 768px){
+
+}
+
+@media (min-width: 1024px){
+  .heading{
+    &--h1{
+      font-size: $size-title-d;
+    }
+  }
+}

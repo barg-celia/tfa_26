@@ -21,3 +21,13 @@
     border-radius: 99px;
   }
 }
+@media (min-width: 768px){
+
+}
+
+@media (min-width: 1024px){
+  .intro__p{
+    margin: 0;
+    font-size: $size-text-d;
+  }
+}
