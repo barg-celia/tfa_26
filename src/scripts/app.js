@@ -114,32 +114,36 @@ document.addEventListener("DOMContentLoaded", () => {
     // Fonction pour appliquer les bonnes coordonnées de lignes SVG
     function updateLines() {
 
-    const car = document.getElementById("car");
+      const car = document.getElementById("car");
+        if (!car) return;
 
-    if (!car) return;
+      const carRect = car.getBoundingClientRect();
+      const carX = carRect.left + carRect.width / 2;
+      const carY = carRect.top + carRect.height / 2;
 
-    const carRect = car.getBoundingClientRect();
+      document.querySelectorAll(".node").forEach(node => {
 
-    const carCenterX = carRect.left + carRect.width / 2;
-    const carCenterY = carRect.top + carRect.height / 2;
-
-    document.querySelectorAll(".node").forEach(node => {
-
+        const dot = node.querySelector(".dot");
         const svg = node.querySelector(".connector-svg");
-        const path = svg.querySelector(".line");
+        const path = node.querySelector(".line");
 
-        const nodeRect = node.getBoundingClientRect();
+        const dotRect = dot.getBoundingClientRect();
+        const svgRect = svg.getBoundingClientRect();
 
-        const nodeCenterX = nodeRect.left + nodeRect.width / 2;
-        const nodeCenterY = nodeRect.top + nodeRect.height / 2;
+        // 🎯 centre du dot (écran)
+        const dotX = dotRect.left + dotRect.width / 2;
+        const dotY = dotRect.top + dotRect.height / 2;
 
-        const dx = carCenterX - nodeCenterX;
-        const dy = carCenterY - nodeCenterY;
+        // 🎯 conversion vers repère SVG local
+        const x1 = dotX - svgRect.left;
+        const y1 = dotY - svgRect.top;
 
-        path.setAttribute("d", `M 0 0 L ${dx} ${dy}`);
-    });
-}
+        const x2 = carX - svgRect.left;
+        const y2 = carY - svgRect.top;
 
+        path.setAttribute("d", `M ${x1} ${y1} L ${x2} ${y2}`);
+      });
+    }
     // Gestion du clic 
     nodes.forEach(node => {
         node.addEventListener('click', (e) => {

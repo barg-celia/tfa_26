@@ -44,7 +44,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    z-index: 10;
+    z-index: 20;
     -webkit-tap-highlight-color: transparent;
 
     .dot {
@@ -65,7 +65,7 @@
         pointer-events: none; 
         transition: all 0.4s ease;
         white-space: nowrap;
-        font-size: 2rem;
+        font-size: $size-text-m;
         padding: 6px 10px;
         font-family: $font-subtitle;
         z-index: 20;
@@ -156,8 +156,6 @@
     position: absolute;
     top: 15px;
     left: 15px;
-    width: 1px;
-    height: 1px;
     overflow: visible;
     pointer-events: none;
 }
@@ -169,6 +167,8 @@
     stroke-dasharray: 600;
     stroke-dashoffset: 600;
     transition: stroke-dashoffset 0.5s ease-out;
+    stroke-linecap: round;
+    stroke-linejoin: round;
 }
 
 @keyframes float {
@@ -185,45 +185,66 @@
         top: 50%;
         left: 50%;
         bottom: auto;
-
         transform: translate(-50%, -50%);
 
         img {
-            width: 500px;
+            width: 650px;
+        }
+    }
+
+    .node {
+        width: 40px;
+        height: 40px;
+        .dot {
+            width: 25px;
+            height: 25px;
         }
     }
 
     .signature {
         position: absolute;
-
         bottom: 40px;
         left: 50%;
-
         transform: translateX(-50%);
-
         margin: 0;
+        font-size: $size-subtitle-t;
     }
 
     .pos-1 {
-        top: 18%;
-        left: 20%;
+        top: 20%;
+        left: 10%;
     }
 
     .pos-2 {
-        top: 12%;
+        top: 8%;
         left: 50%;
         transform: translateX(-50%);
     }
-
+    .pos-1, .pos-2 {
+    .label {
+            left: 30px;
+            transform: translateX(-10px);
+            font-size: $size-subtitle-t;
+        }
+    }
     .pos-3 {
-        top: 18%;
-        right: 20%;
+        top: 25%;
+        right: 15%;
     }
 
     .pos-4 {
-        bottom: 22%;
-        left: 50%;
-        transform: translateX(-50%);
+        bottom: 20%;
+        left: 25%;
+        right: auto;
+        top: auto;
+        transform: none;
+    }
+    .pos-3, .pos-4 {
+    .label {
+            right: 30px;
+            transform: translateX(10px);
+            font-size: $size-subtitle-t;
+        }
     }
 
     .node:hover {
@@ -243,6 +264,7 @@
 
         .line {
             stroke-dashoffset: 0;
+            stroke-width: 3px;
         }
     }
 }
@@ -250,28 +272,58 @@
 @media (min-width: 1024px) {
 
     .car-placeholder img {
-        width: 700px;
+        width: 900px;
     }
 
+    .node {
+        width: 50px;
+        height: 50px;
+        .dot {
+            width: 30px;
+            height: 30px;
+        }
+    }
     .pos-1 {
-        top: 15%;
-        left: 15%;
+        top: 20%;
+        left: 10%;
     }
 
     .pos-2 {
-        top: 8%;
+        top: 5%;
         left: 50%;
         transform: translateX(-50%);
     }
-
+    .pos-1, .pos-2 {
+    .label {
+            left: 50px;
+            transform: translateX(-10px);
+            font-size: $size-subtitle-d;
+        }
+    }
     .pos-3 {
-        top: 15%;
-        right: 15%;
+        top: 20%;
+        right: 10%;
     }
 
     .pos-4 {
-        bottom: 15%;
-        left: 50%;
-        transform: translateX(-50%);
+        bottom: 10%;
+        left: 15%;
+        right: auto;
+        top: auto;
+        transform: none;
+    }
+    .pos-3, .pos-4 {
+    .label {
+            right: 50px;
+            transform: translateX(10px);
+            font-size: $size-subtitle-d;
+        }
+    }
+    .signature{
+        font-size: $size-title-d;
+    }
+
+    .line{
+        stroke-width: 4px;
     }
 }
