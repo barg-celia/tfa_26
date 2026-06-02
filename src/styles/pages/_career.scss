@@ -22,7 +22,18 @@
   }
 }
 @media (min-width: 768px){
-
+  .intro__p{
+    margin: 0;
+    font-size: $size-subtitle-t;
+    padding: 60px;
+  }
+  .role{
+    padding-left: 15rem;
+    padding-right: 10rem;
+    &::before{
+      left: 16rem;
+    }
+  }
 }
 
 @media (min-width: 1024px){

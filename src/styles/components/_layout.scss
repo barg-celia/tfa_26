@@ -17,7 +17,7 @@
   top: 20px;
   left: 20px;
   padding: 10px;
-  background: rgba(255,255,255,0.9);
+  background: rgba(212, 211, 211, 0.9);
   color: $c-text;
   text-decoration: none;
   border-radius: 15px;
@@ -116,6 +116,21 @@
     .item{
       width: 45%;
     }
+  }
+  .btn-retour:hover{
+    background-color: $c-text-b;
+    color: $c-f1;
+  }
+  .pages__link:hover{
+    color: $c-f1;
+    text-decoration: underline;
+  }
+  .card {
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+  }
+  .card:hover{
+    transform: translateY(-8px);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
   }
 }
 
