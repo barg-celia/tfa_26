@@ -4,11 +4,70 @@
 .heading--h1cs{
     text-align: center;
 }
-
+.p__cs{
+    margin: 0;
+}
 @media (min-width: 1024px){
     .heading--h1cs{
         font-size: $size-title-d;
         font-family: $font-title;
         color: $c-text-b;
+    }
+    .heading--h2{
+        text-align: center;
+        color: $c-text-b;
+        font-size: $size-subtitle-d;
+    }
+    .etapes{
+        border-radius: 10px;
+        border: 1px solid $c-text-b;
+        margin: 80px 250px 80px 250px;
+        padding: 30px 80px 80px;
+    }
+    .container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        text-align: center;
+        cursor: pointer;
+        .monImage {
+            max-width: 400px;
+            cursor: pointer;
+            transition: opacity 0.3s ease;
+            border-radius: 15px;
+        }
+        .texte {
+            display: none;
+            opacity: 0;
+            color: $c-text-b;
+            font-size: $size-text-d;
+            transition: opacity 0.3s ease;
+        }
+        .puce{
+            list-style: disc;
+            text-align: left;
+        }
+        span{
+            font-size: $size-subtitle-d;
+        }
+        .a__cs{
+            color: $c-text-b;
+            &:hover{
+                color: $c-f1
+            }
+        }
+    }
+    /* état actif */
+    .container.active {
+
+        .monImage {
+            display: none;
+        }
+
+        .texte {
+            display: block;
+            opacity: 1;
+        }
     }
 }
