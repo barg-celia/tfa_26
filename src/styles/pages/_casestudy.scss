@@ -13,7 +13,7 @@
         font-family: $font-title;
         color: $c-text-b;
     }
-    .heading--h2{
+    .heading--h2cs{
         text-align: center;
         color: $c-text-b;
         font-size: $size-subtitle-d;
@@ -70,4 +70,42 @@
             opacity: 1;
         }
     }
+    .footer__cs {
+        position: relative;
+        padding: 10px 16px 16px;
+        text-align: center;
+
+        &::before {
+            content: "";
+            display: block;
+            width: 200px;
+            height: 4px;
+            background-color: $c-f1;
+            margin: 40px auto 20px auto;
+            border-radius: 5px;
+        }
+
+        &__socialcs,
+        &__infoscs {
+            list-style: none;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            gap: 16px;
+            margin-bottom: 16px;
+            flex-wrap: wrap;
+        }
+
+        & a{
+            color: $c-text-b;
+            text-decoration: none;
+            &:hover{
+                color: $c-f1;
+            }
+        }
+        .footer__copyrightcs{
+            color: $c-text-b;
+        }
+    }
+
 }
