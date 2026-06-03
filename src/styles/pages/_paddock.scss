@@ -22,3 +22,26 @@
   margin-left: 12px;
   border-radius: 99px;
 }
+
+@media (min-width: 768px){
+  .ul__puce, .p__pad{
+    margin: 0;
+  }
+  section{
+    padding-left: 15rem;
+    padding-right: 15rem;
+  }
+  .num::after{
+    width: 200px;
+  }
+}
+
+@media (min-width: 1024px){
+  section{
+    padding-left: 40rem;
+    padding-right: 30rem;
+  }
+  .num::after{
+    width: 250px;
+  }
+}
