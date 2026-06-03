@@ -1,11 +1,9 @@
 .image-box {
   position: relative;
   width: 100%;
-  max-width: 350px;
   height: 220px;
   background-size: cover;
   background-position: center;
-
   border-radius: 12px;
   overflow: hidden;
 
@@ -14,7 +12,6 @@
     top: 10px;
     left: 10px;
     z-index: 2;
-
     padding: 10px 14px;
     border: none;
     border-radius: 8px;
@@ -26,18 +23,14 @@
   .overlay {
     position: absolute;
     inset: 0;
-
     display: flex;
     align-items: center;
     justify-content: center;
-
     background: rgba(0, 0, 0, 0.65);
     color: $c-text-b;
-
     opacity: 0;
     transform: translateY(10px);
     transition: 0.25s ease;
-
     pointer-events: none;
 
     p {
@@ -59,16 +52,59 @@
   margin-top: 20px;
   display: flex;
   gap: 12px;
-  max-width: 350px;
 
   button {
     flex: 1;
     padding: 10px;
     border: none;
     border-radius: 8px;
-    font-size: 18px;
+    font-size: $size-text-m;
     background: $c-alt;
     color: $c-text-b;
     cursor: pointer;
+  }
+}
+
+@media (min-width: 768px) {
+  .image-box {
+    height: 350px;
+  }
+  .image-box{
+    .overlay{
+      p{
+        font-size: $size-text-t;
+        padding: 60px;
+      }
+    }
+  }
+  .controls{
+    width: 100%;
+    button{
+      font-size: $size-text-t;
+    }
+  }
+}
+
+@media (min-width: 1024px) {
+  .image-box {
+    height: 450px;
+  }
+  .image-box{
+    .overlay{
+      p{
+        font-size: $size-text-d;
+        padding: 80px;
+      }
+    }
+  }
+  .controls{
+    width: 100%;
+    button{
+      font-size: $size-text-d;
+    }
+  }
+  .raceimpact{
+    padding-left: 300px;
+    padding-right: 300px;
   }
 }
