@@ -12,10 +12,11 @@ const mix = require('laravel-mix');
  */
 
 mix
+  .setPublicPath('dist')
   .copy('src/**/*.html', 'dist/')
   .copyDirectory('src/assets', 'dist/assets')
   .js('src/scripts/app.js', 'dist/scripts/')
-  .sass('src/styles/app.scss', 'styles/', { sassOptions: { outputStyle: 'expanded' } })
+  .sass('src/styles/app.scss', 'dist/styles/', { sassOptions: { outputStyle: 'expanded' } })
   .options({
     processCssUrls: false,
     autoprefixer: {
@@ -28,7 +29,6 @@ mix
     }
   })
   .sourceMaps()
-  .setPublicPath('dist')
   .browserSync({
     proxy: false,
     server: 'dist',
