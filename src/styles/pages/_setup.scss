@@ -55,7 +55,16 @@ body {
 }
 
 @media (min-width: 768px){
-
+  .section__content{
+      padding: 15px 150px;
+      margin: 0;
+  }
+  .heading--h2s{
+      margin-left: 150px;
+  }
+  .p__normal--rs{
+      margin: 0px 150px;
+  }
 }
 
 @media (min-width: 1024px){
