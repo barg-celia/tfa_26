@@ -17,11 +17,12 @@
   top: 20px;
   left: 20px;
   padding: 10px;
-  background: rgba(212, 211, 211, 0.9);
+  background: rgba(174, 174, 174, 0.9);
   color: $c-text;
   text-decoration: none;
   border-radius: 15px;
   font-family: $font-body;
+  z-index: 20;
 }
 .pages {
   display: flex;
@@ -120,7 +121,7 @@
     }
   }
   .btn-retour:hover{
-    background-color: $c-text-b;
+    background-color: #dad9d9;
     color: $c-f1;
   }
   .pages__link:hover{
