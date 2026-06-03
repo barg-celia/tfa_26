@@ -1,3 +1,14 @@
 .body__noir{
     background-color: $c-alt;
 }
+.heading--h1cs{
+    text-align: center;
+}
+
+@media (min-width: 1024px){
+    .heading--h1cs{
+        font-size: $size-title-d;
+        font-family: $font-title;
+        color: $c-text-b;
+    }
+}

@@ -111,12 +111,11 @@ document.addEventListener("DOMContentLoaded", () => {
     }
     const nodes = document.querySelectorAll('.node');
     
-    // Fonction pour appliquer les bonnes coordonnées de lignes SVG
     function updateLines() {
 
       const car = document.getElementById("car");
         if (!car) return;
-
+      // calculer le centre de la voiture 
       const carRect = car.getBoundingClientRect();
       const carX = carRect.left + carRect.width / 2;
       const carY = carRect.top + carRect.height / 2;
@@ -126,21 +125,23 @@ document.addEventListener("DOMContentLoaded", () => {
         const dot = node.querySelector(".dot");
         const svg = node.querySelector(".connector-svg");
         const path = node.querySelector(".line");
-
+        // trouver le centre du point
         const dotRect = dot.getBoundingClientRect();
+        // position du svg
         const svgRect = svg.getBoundingClientRect();
 
-        // 🎯 centre du dot (écran)
+        // centre du dot (écran)
         const dotX = dotRect.left + dotRect.width / 2;
         const dotY = dotRect.top + dotRect.height / 2;
 
-        // 🎯 conversion vers repère SVG local
+        // conversion vers repère SVG local
+        // départ de la ligne 
         const x1 = dotX - svgRect.left;
         const y1 = dotY - svgRect.top;
-
+        // retour de la ligne
         const x2 = carX - svgRect.left;
         const y2 = carY - svgRect.top;
-
+        // dessiner la ligne
         path.setAttribute("d", `M ${x1} ${y1} L ${x2} ${y2}`);
       });
     }
@@ -160,10 +161,11 @@ document.addEventListener("DOMContentLoaded", () => {
             node.classList.add('active');
         });
     });
+    // maj du redimensionnement
     window.addEventListener('resize', updateLines);
-
+    // maj quand l'image est chargé
     const carImage = document.querySelector('#car img');
-
+    // quand l'image est chargé ont recalcule les lignes
     carImage.addEventListener('load', updateLines);
     
     updateLines();
