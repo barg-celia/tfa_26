@@ -1,7 +1,7 @@
 .section {
   padding: 20px;
 
-  .heading--h2 {
+  .heading--h2s {
     margin-bottom: 10px;
   }
 
@@ -52,4 +52,21 @@ body {
             stroke-dasharray: 12 8;
       }
     }
+}
+
+@media (min-width: 768px){
+
+}
+
+@media (min-width: 1024px){
+  .section__content{
+    padding: 30px 300px;
+    margin: 0;
+  }
+  .heading--h2s{
+    margin-left: 300px;
+  }
+  .p__normal{
+    font-size: 2.5rem;
+  }
 }
