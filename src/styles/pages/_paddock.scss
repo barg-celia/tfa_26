@@ -34,6 +34,13 @@
   .num::after{
     width: 200px;
   }
+  .li__puce{
+    &::before{
+        content: "🛞";
+        margin-right: 8px;
+        font-size: 1.5rem;
+    }
+  }
 }
 
 @media (min-width: 1024px){
@@ -43,5 +50,12 @@
   }
   .num::after{
     width: 250px;
+  }
+  .li__puce{
+    &::before{
+        content: "🛞";
+        margin-right: 8px;
+        font-size: 1.8rem;
+    }
   }
 }
