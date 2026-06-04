@@ -204,3 +204,30 @@ document.querySelectorAll('a.js-transition').forEach(link => {
         }, 850);
     });
 });
+
+const zoomOverlay = document.getElementById("zoomOverlay");
+
+document.querySelectorAll(".node").forEach(node => {
+  const link = node.querySelector(".label a");
+
+  if (!link) return;
+
+  link.addEventListener("click", (e) => {
+    e.preventDefault();
+
+    const url = link.href;
+
+    const rect = node.getBoundingClientRect();
+    const x = rect.left + rect.width / 2;
+    const y = rect.top + rect.height / 2;
+
+    zoomOverlay.style.transformOrigin = `${x}px ${y}px`;
+
+    document.body.classList.add("zooming");
+    zoomOverlay.classList.add("active");
+
+    setTimeout(() => {
+      window.location.href = url;
+    }, 600);
+  });
+});

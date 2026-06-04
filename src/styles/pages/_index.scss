@@ -179,6 +179,32 @@
     100% { transform: translate(0, 0); }
 }
 
+.zoom__overlay {
+  position: fixed;
+  inset: 0;
+  background: radial-gradient(circle, $c-f1 0%, $c-f1 40%, $c-alt 100%);
+  transform: scale(0);
+  border-radius: 50%;
+  z-index: 9999;
+  pointer-events: none;
+
+  transition:
+    transform 0.6s cubic-bezier(0.7, 0, 0.3, 1),
+    border-radius 0.6s ease;
+
+  &.active {
+    transform: scale(3);
+    border-radius: 0%;
+  }
+}
+body {
+  &.zooming {
+    filter: blur(5px) brightness(0.75);
+    transform: scale(1.01);
+    transition: filter 0.25s ease, transform 0.25s ease;
+  }
+}
+
 @media (min-width: 768px) {
 
     .car-placeholder {
