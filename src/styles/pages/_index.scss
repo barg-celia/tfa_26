@@ -8,7 +8,7 @@
 .scene {
     position: relative;
     width: 100vw;
-    height: 100vh;
+    height: 90vh;
     overflow: hidden;
 }
 
@@ -206,7 +206,9 @@ body {
 }
 
 @media (min-width: 768px) {
-
+    .scene{
+        height: 100vh;
+    }
     .car-placeholder {
         top: 50%;
         left: 50%;
