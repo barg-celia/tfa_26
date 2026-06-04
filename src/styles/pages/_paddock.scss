@@ -3,14 +3,14 @@
     margin-top: 5px; 
     
     &::before{
-        content: "🛞";
-        margin-right: 8px;
-        font-size: 1.3rem;
+      content: "🛞";
+      margin-right: 8px;
+      font-size: 1.3rem;
     }
 }
 
 .ul__puce{
-    margin-left: 30px;
+  margin-left: 30px;
 }
 
 .num::after {
@@ -36,9 +36,18 @@
   }
   .li__puce{
     &::before{
-        content: "🛞";
-        margin-right: 8px;
-        font-size: 1.5rem;
+      content: "🛞";
+      margin-right: 8px;
+      font-size: 1.5rem;
+      display: inline-block;
+    }
+    &:hover::before {
+      animation: spin 0.6s linear infinite;
+    }
+  }
+  @keyframes spin {
+    to {
+      transform: rotate(360deg);
     }
   }
 }
@@ -53,9 +62,9 @@
   }
   .li__puce{
     &::before{
-        content: "🛞";
-        margin-right: 8px;
-        font-size: 1.8rem;
+      content: "🛞";
+      margin-right: 8px;
+      font-size: 1.8rem;
     }
   }
 }
