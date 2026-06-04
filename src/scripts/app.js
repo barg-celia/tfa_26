@@ -188,3 +188,19 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 
 });
+
+const transition = document.querySelector('.transition');
+
+document.querySelectorAll('a.js-transition').forEach(link => {
+    link.addEventListener('click', e => {
+        e.preventDefault();
+
+        const href = link.getAttribute('href');
+
+        transition.classList.add('transition__show');
+
+        setTimeout(() => {
+            window.location.href = href;
+        }, 850);
+    });
+});

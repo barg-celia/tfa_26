@@ -106,6 +106,18 @@
     text-decoration: none;
   }
 }
+.transition {
+  position: fixed;
+  inset: 0;
+  background: $c-alt;
+  z-index: 9999;
+  transform: translateY(100%);
+  transition: transform 1s cubic-bezier(0.83, 0, 0.17, 1);
+  pointer-events: none;
+  &.transition__show{
+    transform: translateY(0);
+  }
+}
 
 @media (min-width: 768px){
   .hero{
