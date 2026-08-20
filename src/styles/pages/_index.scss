@@ -4,7 +4,7 @@
     margin: 0;
     padding: 0;
 }
-.p__accueil{
+.p__accueil {
     color: white;
     text-align: center;
     margin: 10px 30px;
@@ -16,7 +16,6 @@
     height: 100vh;
     overflow: hidden;
 }
-
 .signature {
     font-size: 2.5rem;
     margin-top: 20px;
@@ -26,7 +25,6 @@
     color: $c-text-b;
     font-family: $font-title;
 }
-
 .car-placeholder {
     position: absolute;
     bottom: 40px;
@@ -35,13 +33,12 @@
     display: flex;
     justify-content: center;
     align-items: center;
-
     img {
         width: 300px;
         height: auto;
+        display: block;
     }
 }
-
 .node {
     position: absolute;
     width: 50px;
@@ -50,8 +47,19 @@
     justify-content: center;
     align-items: center;
     z-index: 20;
+    cursor: pointer;
     -webkit-tap-highlight-color: transparent;
-
+    &::before {
+        content: "";
+        position: absolute;
+        width: 250px;
+        height: 250px;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        background: transparent;
+        z-index: -1;
+    }
     .dot {
         width: 30px;
         height: 30px;
@@ -59,22 +67,20 @@
         background: $c-bg;
         transition: all 0.3s ease;
         animation: float 5s ease-in-out infinite;
-        pointer-events: none; 
+        pointer-events: none;
     }
-
     .label {
         position: absolute;
         color: $c-text-b;
         opacity: 0;
         visibility: hidden;
-        pointer-events: none; 
+        pointer-events: none;
         transition: all 0.4s ease;
         white-space: nowrap;
-        font-size: $size-text-m;
         padding: 6px 10px;
+        font-size: $size-text-m;
         font-family: $font-subtitle;
-        z-index: 20;
-
+        z-index: 30;
         a {
             pointer-events: auto;
             position: relative;
@@ -86,77 +92,71 @@
             text-decoration-color: $c-f1;
         }
     }
-
     &.active {
         .dot {
             background: $c-f1;
             box-shadow: 0 0 20px $c-f1;
             animation: none;
         }
-
         .label {
             opacity: 1;
             visibility: visible;
             pointer-events: auto;
             transform: translateX(0);
         }
-
         .line {
             stroke-dashoffset: 0;
         }
     }
 }
-
-.pos-1 {
+#paddock {
     top: 100px;
     left: 40px;
     .dot {
         animation-delay: 0s;
         animation-duration: 4.8s;
     }
-}
-
-.pos-2 {
-    top: 220px;
-    left: 45px;
-    .dot {
-        animation-delay: 1.2s;
-        animation-duration: 5.6s;
-    }   
-}
-
-.pos-1, .pos-2 {
     .label {
         left: 40px;
         transform: translateX(-10px);
     }
 }
-
-.pos-3 {
+#career {
+    top: 220px;
+    left: 45px;
+    .dot {
+        animation-delay: 1.2s;
+        animation-duration: 5.6s;
+    }
+    .label {
+        left: 40px;
+        transform: translateX(-10px);
+    }
+}
+#setup {
     top: 140px;
     right: 40px;
     .dot {
         animation-delay: 2.4s;
         animation-duration: 4.3s;
     }
-}
-
-.pos-4 {
-    top: 260px;
-    right: 45px;
-    .dot {
-        animation-delay: 3.1s;
-        animation-duration: 5.2s;
-    }  
-}
-
-.pos-3, .pos-4 {
     .label {
         right: 40px;
         transform: translateX(10px);
     }
 }
-
+#impact {
+    top: 260px;
+    right: 45px;
+    .dot {
+        animation-delay: 3.1s;
+        animation-duration: 5.2s;
+    }
+    .label {
+        right: 40px;
+        transform: translateX(10px);
+    }
+}
 .connector-svg {
     position: absolute;
     top: 15px;
@@ -164,74 +164,100 @@
     overflow: visible;
     pointer-events: none;
 }
-
 .line {
     fill: none;
     stroke: $c-f1;
-    stroke-width: 1.5;
+    stroke-width: 1.5px;
     stroke-dasharray: 600;
     stroke-dashoffset: 600;
-    transition: stroke-dashoffset 0.5s ease-out;
+    transition:
+        stroke-dashoffset 0.5s ease-out,
+        stroke-width 0.3s ease;
     stroke-linecap: round;
     stroke-linejoin: round;
 }
-
 @keyframes float {
-    0% { transform: translate(0, 0); }
-    25% { transform: translate(3px, -4px); }
-    50% { transform: translate(-2px, 3px); }
-    75% { transform: translate(4px, 2px); }
-    100% { transform: translate(0, 0); }
+    0% {
+        transform: translate(0, 0);
+    }
+    25% {
+        transform: translate(3px, -4px);
+    }
+    50% {
+        transform: translate(-2px, 3px);
+    }
+    75% {
+        transform: translate(4px, 2px);
+    }
+    100% {
+        transform: translate(0, 0);
+    }
 }
-
 .zoom__overlay {
-  position: fixed;
-  inset: 0;
-  background: radial-gradient(circle, $c-f1 0%, $c-f1 40%, $c-alt 100%);
-  transform: scale(0);
-  border-radius: 50%;
-  z-index: 9999;
-  pointer-events: none;
-
-  transition:
-    transform 0.6s cubic-bezier(0.7, 0, 0.3, 1),
-    border-radius 0.6s ease;
-
-  &.active {
-    transform: scale(3);
-    border-radius: 0%;
-  }
+    position: fixed;
+    inset: 0;
+    background: radial-gradient(
+        circle,
+        $c-f1 0%,
+        $c-f1 40%,
+        $c-alt 100%
+    );
+    transform: scale(0);
+    border-radius: 50%;
+    z-index: 9999;
+    pointer-events: none;
+    transition:
+        transform 0.6s cubic-bezier(0.7, 0, 0.3, 1),
+        border-radius 0.6s ease;
+    &.active {
+        transform: scale(3);
+        border-radius: 0%;
+    }
 }
 body {
-  &.zooming {
-    filter: blur(5px) brightness(0.75);
-    transform: scale(1.01);
-    transition: filter 0.25s ease, transform 0.25s ease;
-  }
+    &.zooming {
+        filter: blur(5px) brightness(0.75);
+        transform: scale(1.01);
+        transition:
+            filter 0.25s ease,
+            transform 0.25s ease;
+    }
 }
-
 @media (min-width: 768px) {
-
     .car-placeholder {
         top: 50%;
         left: 50%;
         bottom: auto;
         transform: translate(-50%, -50%);
-
         img {
             width: 650px;
         }
     }
-
     .node {
-        width: 40px;
-        height: 40px;
+        width: 50px;
+        height: 50px;
         .dot {
             width: 25px;
             height: 25px;
         }
     }
-
+    .node:hover {
+        .dot {
+            background: $c-f1;
+            box-shadow: 0 0 20px $c-f1;
+            animation: none;
+        }
+        .label {
+            opacity: 1;
+            visibility: visible;
+            pointer-events: auto;
+            transform: translateX(0);
+        }
+        .line {
+            stroke-dashoffset: 0;
+            stroke-width: 3px;
+        }
+    }
     .signature {
         position: absolute;
         bottom: 40px;
@@ -240,84 +266,64 @@ body {
         margin: 0;
         font-size: $size-subtitle-t;
     }
-
-    .pos-1 {
-        top: 20%;
-        left: 10%;
+    #paddock {
+        top: 15%;
+        left: 8%;
     }
-
-    .pos-2 {
-        top: 8%;
-        left: 50%;
+    #career {
+        top: 15%;
+        left: auto;
+        right: 8%;
         transform: translateX(-50%);
     }
-    .pos-1, .pos-2 {
-    .label {
+    #setup {
+        top: auto;
+        right: 8%;
+        bottom: 15%;
+    }
+    #impact {
+        bottom: 15%;
+        left: 8%;
+        top: auto;
+        right: auto;
+        transform: none;
+    }
+    #paddock,
+    #career {
+        .label {
             left: 30px;
             transform: translateX(-10px);
             font-size: $size-subtitle-t;
         }
     }
-    .pos-1{
-        .label{
+    #career {
+        .label {
             top: -10px;
         }
     }
-    .pos-3 {
-        top: 25%;
-        right: 15%;
-    }
-
-    .pos-4 {
-        bottom: 20%;
-        left: 25%;
-        right: auto;
-        top: auto;
-        transform: none;
-    }
-    .pos-3, .pos-4 {
-    .label {
+    #setup,
+    #impact {
+        .label {
             right: 30px;
             transform: translateX(10px);
             font-size: $size-subtitle-t;
         }
     }
-    .pos-3{
-        .label{
+    #setup {
+        .label {
             top: -10px;
         }
     }
-    .node:hover {
-
-        .dot {
-            background: $c-f1;
-            box-shadow: 0 0 20px $c-f1;
-            animation: none;
-        }
-
-        .label {
-            opacity: 1;
-            visibility: visible;
-            pointer-events: auto;
-            transform: translateX(0);
-        }
-
-        .line {
-            stroke-dashoffset: 0;
-            stroke-width: 3px;
-        }
-    }
-    .p__accueil{
+    .p__accueil {
         font-size: $size-text-t;
     }
 }
-
 @media (min-width: 1024px) {
-
-    .car-placeholder img {
-        width: 900px;
+    .car-placeholder {
+        img {
+            width: 900px;
+        }
     }
-
     .node {
         width: 50px;
         height: 50px;
@@ -326,55 +332,57 @@ body {
             height: 30px;
         }
     }
-    .pos-1 {
+    #paddock {
         top: 20%;
         left: 10%;
     }
-
-    .pos-2 {
-        top: 5%;
-        left: 50%;
-        transform: translateX(-50%);
+    #career {
+        top: 10%;
+        left: auto;
+        right: 10%;
+        transform: none;
     }
-    .pos-1, .pos-2 {
-    .label {
+    #setup {
+        top: auto;
+        right: 10%;
+        bottom: 20%;
+    }
+    #impact {
+        top: auto;
+        left: 10%;
+        bottom: 20%;
+        right: auto;
+        transform: none;
+    }
+    #paddock,
+    #impact {
+        .label {
             left: 50px;
             transform: translateX(-10px);
             font-size: $size-subtitle-d;
         }
     }
-    .pos-1{
-        .label{
-            top: -10px;
-        }
-    }
-    .pos-3 {
-        top: 20%;
-        right: 10%;
-    }
-
-    .pos-4 {
-        bottom: 10%;
-        left: 15%;
-        right: auto;
-        top: auto;
-        transform: none;
-    }
-    .pos-3, .pos-4 {
-    .label {
+    #career,
+    #setup {
+        .label {
             right: 50px;
             transform: translateX(10px);
             font-size: $size-subtitle-d;
         }
     }
-    .signature{
-        font-size: $size-title-d;
+    #career,
+    #setup {
+        .label {
+            top: -10px;
+        }
     }
-
-    .line{
+    .line {
         stroke-width: 4px;
     }
-    .p__accueil{
+    .signature {
+        font-size: $size-title-d;
+    }
+    .p__accueil {
         font-size: $size-text-d;
     }
 }
