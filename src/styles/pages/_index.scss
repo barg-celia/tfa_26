@@ -358,22 +358,33 @@ body {
     #impact {
         .label {
             left: 50px;
+            right: auto;
             transform: translateX(-10px);
             font-size: $size-subtitle-d;
+        }
+    }
+    #paddock {
+        .label {
+            bottom: 7px;
+        }
+    }
+    #impact {
+        .label {
+            top: 3px;
         }
     }
     #career,
     #setup {
         .label {
             right: 50px;
+            left: auto;
             transform: translateX(10px);
             font-size: $size-subtitle-d;
         }
     }
-    #career,
     #setup {
         .label {
-            top: -10px;
+            top: 3px;
         }
     }
     .line {
