@@ -106,68 +106,71 @@ if (positiveBox){
 
 
 document.addEventListener("DOMContentLoaded", () => {
-    if (!document.body.classList.contains('body')) {
-        return; 
+    if (!document.body.classList.contains("body")) {
+      return;
     }
-    const nodes = document.querySelectorAll('.node');
-    
+    const nodes = document.querySelectorAll(".node");
+    const car = document.getElementById("car");
+    if (!car) return;
     function updateLines() {
-
-      const car = document.getElementById("car");
-        if (!car) return;
-      // calculer le centre de la voiture 
       const carRect = car.getBoundingClientRect();
-      const carX = carRect.left + carRect.width / 2;
-      const carY = carRect.top + carRect.height / 2;
-
-      document.querySelectorAll(".node").forEach(node => {
-
+      const targets = {
+        career: { x: 55, y: 30 },
+        paddock: { x: 20, y: 20 },
+        setup: { x: 65, y: 90 },
+        impact: { x: 10, y: 70 }
+      };
+      nodes.forEach(node => {
         const dot = node.querySelector(".dot");
         const svg = node.querySelector(".connector-svg");
         const path = node.querySelector(".line");
-        // trouver le centre du point
+        if (!dot || !svg || !path) return;
         const dotRect = dot.getBoundingClientRect();
-        // position du svg
-        const svgRect = svg.getBoundingClientRect();
-
-        // centre du dot (écran)
         const dotX = dotRect.left + dotRect.width / 2;
         const dotY = dotRect.top + dotRect.height / 2;
-
-        // conversion vers repère SVG local
-        // départ de la ligne 
+        const svgRect = svg.getBoundingClientRect();
         const x1 = dotX - svgRect.left;
         const y1 = dotY - svgRect.top;
-        // retour de la ligne
+        const target = targets[node.id];
+        if (!target) return;
+        const carX = carRect.left + (carRect.width * target.x / 100);
+        const carY = carRect.top + (carRect.height * target.y / 100);
         const x2 = carX - svgRect.left;
         const y2 = carY - svgRect.top;
-        // dessiner la ligne
-        path.setAttribute("d", `M ${x1} ${y1} L ${x2} ${y2}`);
+        path.setAttribute(
+          "d",
+          `M ${x1} ${y1} L ${x2} ${y2}`
+        );
       });
     }
-    // Gestion du clic 
     nodes.forEach(node => {
-        node.addEventListener('click', (e) => {
-            // Si pc alors c'est le hoover qui fonctionne
-            if (window.innerWidth >= 768) return;
-
-            if (node.classList.contains('active')) {
-                console.log("Navigation vers : " + node.querySelector('.label').innerText);
-                return;
-            }
-
-            // Sinon, on nettoie et on active le point cliqué
-            nodes.forEach(n => n.classList.remove('active'));
-            node.classList.add('active');
+      node.addEventListener("click", () => {
+        if (window.innerWidth >= 768) {
+          return;
+        }
+        if (node.classList.contains("active")) {
+          const link =
+            node.querySelector(".label a");
+          if (link) {
+            link.click();
+          }
+          return;
+        }
+        nodes.forEach(n => {
+          n.classList.remove("active");
         });
+        node.classList.add("active");
+      });
     });
-    // maj du redimensionnement
-    window.addEventListener('resize', updateLines);
-    // maj quand l'image est chargé
-    const carImage = document.querySelector('#car img');
-    // quand l'image est chargé ont recalcule les lignes
-    carImage.addEventListener('load', updateLines);
-    
+    window.addEventListener("resize", updateLines);
+    const carImage =
+      document.querySelector("#car img");
+    if (carImage) {
+      carImage.addEventListener(
+          "load",
+          updateLines
+      );
+    }
     updateLines();
 });
 
