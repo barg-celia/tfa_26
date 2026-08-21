@@ -117,7 +117,7 @@ document.addEventListener("DOMContentLoaded", () => {
       const targets = {
         career: { x: 55, y: 30 },
         paddock: { x: 20, y: 20 },
-        setup: { x: 65, y: 90 },
+        setup: { x: 65, y: 85 },
         impact: { x: 10, y: 70 }
       };
       nodes.forEach(node => {
