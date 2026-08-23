@@ -21,6 +21,14 @@
     border-radius: 99px;
   }
 }
+.role {
+  p {
+    .bold {
+      font-weight: 1000;
+      text-decoration: underline;
+    }
+  }
+}
 .intro__p strong {
   font-weight: 800;
   display: block;
