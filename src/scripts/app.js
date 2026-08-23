@@ -5,11 +5,11 @@ if (positiveBox){
   const positiveItems = [
     {
       text : "<strong class='highlight'>Expérience unique</strong> L’expérience est comparable à un saut en parachute car ça permet de prouver le courage, le dépassement de soi, la capacité a gérer le stress, ça peut créer des codes sociaux car participer l’expérience devient un passage quasi obligatoire comme le permis à l’heure actuelle",
-      image: "../assets/img/CP1.jpg",
+      image: "/projets/tfa/assets/img/CP1.jpg",
     },
     {
       text : "<strong class='highlight'>Nouveau talent détectés </strong> grâce au IA qui analyse les performances, de vrais professionnel viennent du virtuel sans passer par les circuits traditionnels et le parcours habituel du karting puis formule 4, formule 3, formule 2 et puis formule 1. Il y a une valorisation des talents",
-      image : "../assets/img/CP2.jpg",
+      image : "/projets/tfa/assets/img/CP2.jpg",
     },
     {
       text : "<strong class='highlight'>Création de nouveaux métiers</strong> De nouvelles professions pourraient émerger, comme des coachs mentaux spécialisés dans l’accompagnement des utilisateurs de simulateurs afin de les aider à gérer le stress et la pression. On pourrait également voir apparaître des designers d’expériences immersives dans d’autres domaines. Cette évolution favoriserait aussi le développement des technologies",
@@ -225,3 +225,23 @@ if(menuToggle){
 function menuOpen(){
     menu.classList.toggle("menu--open");
 }
+
+document.addEventListener('DOMContentLoaded', () => {
+  const sections = document.querySelectorAll('.intro, .role');
+
+  // On vérifie qu'au moins un élément existe sur la page actuelle
+  if (sections.length > 0) {
+    const observer = new IntersectionObserver((entries, observer) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('is-visible');
+          observer.unobserve(entry.target);
+        }
+      });
+    }, {
+      threshold: 0.15
+    });
+
+    sections.forEach(section => observer.observe(section));
+  }
+});
