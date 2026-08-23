@@ -12,6 +12,48 @@
     object-position: top;
   }
 }
+.menu__liste {
+  position: fixed;
+  top: 0;
+  right: 0;
+  width: 50%;
+  height: 100vh;
+  margin: 0;
+  padding: 100px 30px 30px;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  background-color: $c-text;
+  z-index: 10;
+  transform: translateX(100%);
+  transition: transform 0.4s ease;
+}
+.menu__toggle{
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  cursor: pointer;
+  z-index: 20;
+  border-radius: 10px;
+  padding: 10px;
+  background-color: $c-text-b;
+  border: solid 1px $c-text;
+}
+.menu--open .menu__liste {
+  transform: translateX(0);
+}
+.menu__el{
+  a {
+    color: $c-text-b;
+    text-decoration: none;
+    font-size: $size-text-t;
+    &.active{
+      color: $c-f1;
+      text-decoration: underline;
+      text-underline-offset: 6px;
+    }
+  }
+}
 .btn-retour {
   position: fixed;
   top: 20px;
@@ -131,6 +173,24 @@
     .item{
       width: 45%;
     }
+  }
+  .menu__toggle{
+    display: none;
+  }
+  .menu__liste{
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: auto;
+    width: 100%;
+    height: auto;
+    margin: 0;
+    padding: 1rem;
+    flex-direction: row;
+    gap: 2rem;
+    transform: none;
+    transition: none;
+    background-color: $c-text;
   }
   .btn-retour:hover{
     background-color: #dad9d9;
