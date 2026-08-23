@@ -40,7 +40,11 @@
   .intro__p{
     margin: 0;
     font-size: $size-subtitle-d;
-    padding: 80px;
+    padding: 100px;
+  }
+  .intro__p strong {
+    font-weight: 800;
+    display: block;
   }
   .role{
     padding-left: 20rem;
