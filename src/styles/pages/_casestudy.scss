@@ -23,48 +23,46 @@
 }
 .container {
     display: flex;
+    flex-direction: column; /* Mobile d'abord : l'un au-dessus de l'autre */
     justify-content: center;
     align-items: center;
-    flex-direction: column;
-    text-align: center;
-    cursor: pointer;
+    gap: 20px;
+    text-align: left; /* Plus lisible pour du texte */
+
     .monImage {
-        max-width: 200px;
-        cursor: pointer;
-        transition: opacity 0.3s ease;
+        width: 100%;
+        max-width: 300px;
+        height: auto;
         border-radius: 15px;
+        object-fit: cover;
     }
+
     .texte {
-        display: none;
-        opacity: 0;
+        display: block; /* Toujours visible par défaut */
+        opacity: 1;
         color: $c-text-b;
         font-size: $size-text-m;
-        transition: opacity 0.3s ease;
     }
-    .puce{
+
+    .puce {
         list-style: disc;
         text-align: left;
     }
-    span{
+
+    span {
         font-size: $size-subtitle-m;
-    }
-    .a__cs{
-        color: $c-text-b;
-        &:hover{
-            color: $c-f1
-        }
-    }
-}
-/* état actif */
-.container.active {
-
-    .monImage {
-        display: none;
-    }
-
-    .texte {
         display: block;
-        opacity: 1;
+        margin-top: 10px;
+        font-weight: bold;
+    }
+
+    .a__cs {
+        color: $c-text-b;
+        display: inline-block;
+        margin-top: 10px;
+        &:hover {
+            color: $c-f1;
+        }
     }
 }
 .footer__cs {
@@ -116,13 +114,20 @@
         padding: 20px 60px 60px;
     }
     .container {
+        flex-direction: row; /* Aligne l'image et le texte sur la même ligne */
+        align-items: flex-start;
+
         .monImage {
-            max-width: 300px;
+            max-width: 40%; /* L'image prend 40% de la largeur */
+            flex-shrink: 0;
         }
+
         .texte {
             font-size: $size-text-t;
+            flex-grow: 1;
         }
-        span{
+
+        span {
             font-size: $size-subtitle-t;
         }
     }
@@ -142,13 +147,10 @@
         padding: 30px 80px 80px;
     }
     .container {
-        .monImage {
-            max-width: 600px;
-        }
         .texte {
             font-size: $size-text-d;
         }
-        span{
+        span {
             font-size: $size-subtitle-d;
         }
     }

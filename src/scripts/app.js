@@ -165,24 +165,6 @@ document.addEventListener("DOMContentLoaded", () => {
     updateLines();
 });
 
-document.addEventListener("DOMContentLoaded", () => {
-
-    const containers = document.querySelectorAll(".container");
-
-    if (containers.length > 0) {
-
-        containers.forEach((container) => {
-
-            container.addEventListener("click", () => {
-                container.classList.toggle("active");
-            });
-
-        });
-
-    }
-
-});
-
 const transition = document.querySelector('.transition');
 
 document.querySelectorAll('a.js-transition').forEach(link => {
