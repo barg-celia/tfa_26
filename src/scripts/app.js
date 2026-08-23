@@ -245,3 +245,40 @@ document.addEventListener('DOMContentLoaded', () => {
     sections.forEach(section => observer.observe(section));
   }
 });
+
+document.addEventListener('DOMContentLoaded', () => {
+    const car = document.getElementById('scrollingCar');
+    const main = document.querySelector('main');
+
+    function updateCarPosition() {
+        if (!car || !main) return;
+
+        // Position de départ et hauteur totale défilable de la zone main
+        const mainRect = main.getBoundingClientRect();
+        const mainTop = window.scrollY + mainRect.top;
+        const mainHeight = main.offsetHeight - window.innerHeight;
+
+        // Position actuelle du scroll par rapport au haut de <main>
+        const scrollPosition = window.scrollY - mainTop;
+
+        // Calcul du pourcentage (entre 0 et 1)
+        let progress = scrollPosition / mainHeight;
+        
+        // Empêche la voiture de sortir des bornes 0% - 100%
+        progress = Math.max(0, Math.min(1, progress));
+
+        // Calcul du déplacement maximal (largeur de la piste minus la largeur de la voiture)
+        const trackWidth = car.parentElement.clientWidth - car.clientWidth;
+        const translateX = progress * trackWidth;
+
+        // Application de la transformation
+        car.style.transform = `translateX(${translateX}px)`;
+    }
+
+    // Écoute de l'événement scroll
+    window.addEventListener('scroll', updateCarPosition, { passive: true });
+    window.addEventListener('resize', updateCarPosition);
+    
+    // Initialisation
+    updateCarPosition();
+});
