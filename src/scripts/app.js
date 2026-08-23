@@ -9,7 +9,7 @@ if (positiveBox){
     },
     {
       text : "<strong class='highlight'>Nouveau talent détectés </strong> grâce au IA qui analyse les performances, de vrais professionnel viennent du virtuel sans passer par les circuits traditionnels et le parcours habituel du karting puis formule 4, formule 3, formule 2 et puis formule 1. Il y a une valorisation des talents",
-      image : "/projets/tfa/assets/img/CP2.jpg",
+      image : "../assets/img/CP2.jpg",
     },
     {
       text : "<strong class='highlight'>Création de nouveaux métiers</strong> De nouvelles professions pourraient émerger, comme des coachs mentaux spécialisés dans l’accompagnement des utilisateurs de simulateurs afin de les aider à gérer le stress et la pression. On pourrait également voir apparaître des designers d’expériences immersives dans d’autres domaines. Cette évolution favoriserait aussi le développement des technologies",
