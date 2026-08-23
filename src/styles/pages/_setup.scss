@@ -14,76 +14,85 @@
     margin-right: calc(50% - 50vw);
     padding: 20px;
   }
-  li{
+  
+  li {
     margin-top: 10px;
   }
 }
-.p__normal{
+
+.p__normal {
   margin: 0;
 }
-.p__normal--rs{
+
+.p__normal--rs {
   margin-left: 0;
   margin-top: 0;
 }
+
 body {
-    position: relative;
-    overflow-x: hidden;
+  position: relative;
+  overflow-x: hidden;
 
-    .circuit-line {
-        position: absolute;
-        inset: 0;
-        width: 100%;
-        height: 100%;
-        z-index: -1;
-        pointer-events: none;
-        opacity: 0.2;
+  .circuit-line {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    pointer-events: none;
+    opacity: 0.2;
 
-        .track {
-            fill: none;
-            stroke: $c-f1;
-            stroke-linecap: round;
-            stroke-linejoin: round;
-        }
-
-        .outer {
-            stroke: $c-f1;
-            stroke-width: 4;
-        }
-
-        .inner {
-            stroke-width: 2;
-            stroke-dasharray: 12 8;
-      }
+    .track {
+      fill: none;
+      stroke: $c-f1;
+      stroke-linecap: round;
+      stroke-linejoin: round;
+      transition: stroke-dashoffset 0.1s linear; 
     }
-}
 
-@media (min-width: 768px){
-  .section__content{
-      padding: 15px 150px;
-      margin: 0;
-  }
-  .heading--h2s{
-      margin-left: 150px;
-      padding-top: 60px;
-  }
-  .p__normal--rs{
-      margin: 0px 150px;
+    .outer {
+      stroke: $c-f1;
+      stroke-width: 4;
+    }
+
+    .inner {
+      stroke-width: 2;
+    }
   }
 }
 
-@media (min-width: 1024px){
-  .section__content{
+@media (min-width: 768px) {
+  .section__content {
+    padding: 15px 150px;
+    margin: 0;
+  }
+  
+  .heading--h2s {
+    margin-left: 150px;
+    padding-top: 60px;
+  }
+  
+  .p__normal--rs {
+    margin: 0px 150px;
+  }
+}
+
+@media (min-width: 1024px) {
+  .section__content {
     padding: 30px 300px;
     margin: 0;
   }
-  .heading--h2s{
+  
+  .heading--h2s {
     margin-left: 300px;
     font-size: $size-subtitle-d;
   }
-  .p__normal, .p__normal--rs{
+  
+  .p__normal, .p__normal--rs {
     font-size: 2.5rem;
   }
-  .p__normal--rs{
+  
+  .p__normal--rs {
     margin: 0px 300px;
     padding-bottom: 150px;
     padding-top: 150px;

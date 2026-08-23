@@ -282,3 +282,38 @@ document.addEventListener('DOMContentLoaded', () => {
     // Initialisation
     updateCarPosition();
 });
+
+document.addEventListener("DOMContentLoaded", () => {
+  const tracks = document.querySelectorAll(".circuit-line .track");
+
+  if (tracks.length === 0) return;
+
+  // Calcul de la longueur totale de chaque ligne et masque initial
+  const trackData = Array.from(tracks).map((track) => {
+    const length = track.getTotalLength();
+    track.style.strokeDasharray = length;
+    track.style.strokeDashoffset = length;
+    return { element: track, length: length };
+  });
+
+  function updateTrackProgress() {
+    const scrollTop = window.scrollY || document.documentElement.scrollTop;
+    const maxScroll =
+      document.documentElement.scrollHeight - window.innerHeight;
+
+    // Pourcentage de scroll global (entre 0 et 1)
+    const scrollFraction = Math.max(0, Math.min(1, scrollTop / maxScroll));
+
+    // Réduction du décalage pour faire apparaître le tracé
+    trackData.forEach(({ element, length }) => {
+      const drawLength = length * scrollFraction;
+      element.style.strokeDashoffset = length - drawLength;
+    });
+  }
+
+  // Écoute du défilement avec paramètre passif pour préserver la fluidité
+  window.addEventListener("scroll", updateTrackProgress, { passive: true });
+
+  // Exécution initiale au chargement
+  updateTrackProgress();
+});
