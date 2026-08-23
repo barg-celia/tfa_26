@@ -42,17 +42,13 @@
       display: inline-block;
     }
   }
-  @keyframes spin {
-    to {
-      transform: rotate(360deg);
-    }
-  }
 }
 
 @media (min-width: 1024px){
   section{
-    padding-left: 40rem;
-    padding-right: 30rem;
+    padding-left: 35rem;
+    padding-right: 35rem;
+    padding-bottom: 20rem;
   }
   .num::after{
     width: 250px;

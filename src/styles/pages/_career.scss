@@ -37,6 +37,9 @@
 }
 
 @media (min-width: 1024px){
+  .intro{
+    padding-bottom: 200px;
+  }
   .intro__p{
     margin: 0;
     font-size: $size-text-intro;
