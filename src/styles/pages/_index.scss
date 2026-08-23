@@ -52,8 +52,8 @@
     &::before {
         content: "";
         position: absolute;
-        width: 250px;
-        height: 250px;
+        width: 50px;
+        height: 50px;
         top: 50%;
         left: 50%;
         transform: translate(-50%, -50%);
@@ -253,6 +253,10 @@ body {
             pointer-events: auto;
             transform: translateX(0);
         }
+        &::before{
+            width: 250px;
+            height: 250px;
+        }
         .line {
             stroke-dashoffset: 0;
             stroke-width: 3px;
@@ -360,7 +364,7 @@ body {
             left: 50px;
             right: auto;
             transform: translateX(-10px);
-            font-size: $size-subtitle-d;
+            font-size: $size-text-intro;
         }
     }
     #paddock {
@@ -379,7 +383,7 @@ body {
             right: 50px;
             left: auto;
             transform: translateX(10px);
-            font-size: $size-subtitle-d;
+            font-size: $size-text-intro;
         }
     }
     #setup {
