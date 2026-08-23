@@ -1,3 +1,42 @@
+@keyframes slideFromLeftMobile {
+    0% {
+        transform: translate(-100vw, 0);
+        opacity: 0;
+    }
+    100% {
+        transform: translate(-50%, 0);
+        opacity: 1;
+    }
+}
+
+@keyframes slideFromLeftDesktop {
+    0% {
+        transform: translate(-100vw, -50%);
+        opacity: 0;
+    }
+    100% {
+        transform: translate(-50%, -50%);
+        opacity: 1;
+    }
+}
+
+@keyframes float {
+    0% {
+        transform: translate(0, 0);
+    }
+    25% {
+        transform: translate(3px, -4px);
+    }
+    50% {
+        transform: translate(-2px, 3px);
+    }
+    75% {
+        transform: translate(4px, 2px);
+    }
+    100% {
+        transform: translate(0, 0);
+    }
+}
 .body {
     background-color: $c-alt;
     overflow: hidden;
@@ -33,6 +72,8 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    opacity: 0;
+    animation: slideFromLeftMobile 1.2s ease-out 1s forwards;
     img {
         width: 300px;
         height: auto;
@@ -176,23 +217,6 @@
     stroke-linecap: round;
     stroke-linejoin: round;
 }
-@keyframes float {
-    0% {
-        transform: translate(0, 0);
-    }
-    25% {
-        transform: translate(3px, -4px);
-    }
-    50% {
-        transform: translate(-2px, 3px);
-    }
-    75% {
-        transform: translate(4px, 2px);
-    }
-    100% {
-        transform: translate(0, 0);
-    }
-}
 .zoom__overlay {
     position: fixed;
     inset: 0;
@@ -229,6 +253,7 @@ body {
         left: 50%;
         bottom: auto;
         transform: translate(-50%, -50%);
+        animation: slideFromLeftDesktop 1.2s ease-out 1s forwards;
         img {
             width: 650px;
         }
