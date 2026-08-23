@@ -38,6 +38,13 @@
   font-size: $size-title-m;
   margin-bottom: 10px;
 }
+.role__img{
+  max-width: 250px;
+  max-height: 150px;
+  border-radius: 10px;
+  margin-top: 100px;
+  margin-left: 15px;
+}
 @media (min-width: 768px){
   .intro__p{
     margin: 0;
@@ -65,6 +72,13 @@
   &.is-visible {
     opacity: 1;
     transform: translateY(0);
+  }
+  .role__img{
+    max-width: 550px;
+    max-height: 300px;
+    border-radius: 10px;
+    margin-top: 100px;
+    margin-left: 25px;
   }
 }
 
