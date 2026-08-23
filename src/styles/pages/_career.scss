@@ -21,6 +21,15 @@
     border-radius: 99px;
   }
 }
+.intro__p strong {
+  font-weight: 800;
+  display: block;
+}
+.strong{
+  display: block;
+  font-size: $size-title-m;
+  margin-bottom: 10px;
+}
 @media (min-width: 768px){
   .intro__p{
     margin: 0;
@@ -34,6 +43,10 @@
       left: 16rem;
     }
   }
+  .strong{
+    font-size: $size-title-t;
+    padding-bottom: 10px;
+  }
 }
 
 @media (min-width: 1024px){
@@ -44,10 +57,6 @@
     margin: 0;
     font-size: $size-text-intro;
     padding: 100px;
-  }
-  .intro__p strong {
-    font-weight: 800;
-    display: block;
   }
   .strong{
     font-size: $size-title-d;
