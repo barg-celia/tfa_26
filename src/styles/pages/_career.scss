@@ -39,12 +39,16 @@
 @media (min-width: 1024px){
   .intro__p{
     margin: 0;
-    font-size: $size-subtitle-d;
+    font-size: $size-text-intro;
     padding: 100px;
   }
   .intro__p strong {
     font-weight: 800;
     display: block;
+  }
+  .strong{
+    font-size: $size-title-d;
+    padding-bottom: 10px;
   }
   .role{
     padding-left: 20rem;
