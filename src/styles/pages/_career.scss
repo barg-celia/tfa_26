@@ -1,5 +1,4 @@
-
-.intro__p{
+.intro__p {
   padding: 40px;
   background-color: $c-alt;
   color: $c-text-b;
@@ -20,8 +19,7 @@
     background-color: $c-f1;
     border-radius: 99px;
   }
-}
-.role {
+
   p {
     .bold {
       font-weight: 1000;
@@ -29,40 +27,19 @@
     }
   }
 }
+
 .intro__p strong {
   font-weight: 800;
   display: block;
 }
-.strong{
+
+.strong {
   display: block;
   font-size: $size-title-m;
   margin-bottom: 10px;
 }
-.role__img{
-  max-width: 250px;
-  max-height: 150px;
-  border-radius: 10px;
-  margin-top: 100px;
-  margin-left: 15px;
-}
-@media (min-width: 768px){
-  .intro__p{
-    margin: 0;
-    font-size: $size-subtitle-t;
-    padding: 60px;
-  }
-  .role{
-    padding-left: 15rem;
-    padding-right: 10rem;
-    &::before{
-      left: 16rem;
-    }
-  }
-  .strong{
-    font-size: $size-title-t;
-    padding-bottom: 10px;
-  }
-}
+
+// Tailles d'images par défaut pour le MOBILE
 .intro,
 .role {
   opacity: 0;
@@ -73,39 +50,79 @@
     opacity: 1;
     transform: translateY(0);
   }
-  .role__img{
-    max-width: 550px;
-    max-height: 300px;
+
+  .role__img {
+    max-width: 300px;
+    max-height: 100px;
     border-radius: 10px;
     margin-top: 100px;
-    margin-left: 25px;
+    margin-left: 30px;
   }
 }
+@media (min-width: 768px) {
+  .intro__p {
+    margin: 0;
+    font-size: $size-subtitle-t;
+    padding: 60px;
+  }
+  
+  .role {
+    padding-left: 15rem;
+    padding-right: 10rem;
+    
+    &::before {
+      left: 16rem;
+    }
+  }
+  
+  .strong {
+    font-size: $size-title-t;
+    padding-bottom: 10px;
+  }
 
-@media (min-width: 1024px){
-  .intro{
+  // Modification des images pour tablette
+  .intro,
+  .role {
+    .role__img {
+      max-width: 550px;
+      max-height: 300px;
+      margin-left: 25px;
+    }
+  }
+}
+@media (min-width: 1024px) {
+  .intro {
     padding-bottom: 200px;
   }
-  .intro__p{
+  
+  .intro__p {
     margin: 0;
     font-size: $size-text-intro;
     padding: 100px;
   }
-  .strong{
+  
+  .strong {
     font-size: $size-title-d;
     padding-bottom: 10px;
   }
-  .role{
+  
+  .role {
     padding-left: 20rem;
     padding-right: 40rem;
-    &::before{
+    
+    &::before {
       left: 18rem;
     }
   }
-  .role__img{
-    max-width: 700px;
-    max-height: 400px;
-    border-radius: 10px;
-    margin-top: 100px;
+  
+  // Modification des images pour desktop
+  .intro,
+  .role {
+    .role__img {
+      max-width: 700px;
+      max-height: 400px;
+      border-radius: 10px;
+      margin-top: 100px;
+    }
   }
 }
