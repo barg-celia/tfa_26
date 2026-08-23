@@ -208,13 +208,6 @@
     color: $c-f1;
     text-decoration: underline;
   }
-  .card {
-    transition: transform 0.2s ease, box-shadow 0.2s ease;
-  }
-  .card:hover{
-    transform: translateY(-8px);
-    box-shadow: 0 15px 25px rgba(0, 0, 0, 0.35);
-  }
   .footer a:hover{
     color: $c-f1;
   }
@@ -231,14 +224,6 @@
   }
   .pages{
     gap: 50px;
-    .item{
-      width: 25%;
-    }
-    .card{
-      width: 100%;
-      max-width: 300px;
-      height: 200px;
-    }
   }
   .menu__el a {
     font-size: 3rem;
