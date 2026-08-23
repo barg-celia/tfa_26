@@ -184,14 +184,18 @@
     right: auto;
     width: 100%;
     height: auto;
+    min-height: 60px;
     margin: 0;
     padding: 1rem;
     flex-direction: row;
-    gap: 2rem;
+    gap: 50px;
     transform: none;
     transition: none;
     background-color: $c-text;
     justify-content: center;
+  }
+  .menu__el a {
+    font-size: 2.5rem;
   }
   .btn-retour{
     top: 50px;
@@ -222,7 +226,7 @@
   }
   .btn-retour{
     font-size: $size-text-d;
-    top: 50px;
+    top: 80px;
     left: 50px;
   }
   .pages{
@@ -236,7 +240,7 @@
       height: 200px;
     }
   }
-  .btn-retour{
-    top: 80px;
+  .menu__el a {
+    font-size: 3rem;
   }
 }
