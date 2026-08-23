@@ -35,37 +35,46 @@
             <img src="assets/img/impact.jpg" alt="hero image qui illustre l'impact de l'experience, ici on voit un homme au simulateur avec d'autre hommes autours et leurs higyènes de vies est médiocre">
         </div>
     </header>
-    <h1 class="heading--h1">Race impact</h1>
-    <section class="raceimpact">
-        <h2 class="heading--h2">01. Conséquences positives</h2>
-        <div class="impact-card">
-            <div class="image-box positive" id="positive-box"></div>
-            <div class="overlay">
-                <p id="positive-text"></p>
+    <main>
+        <h1 class="heading--h1">Race impact</h1>
+        <section class="raceimpact">
+            <h2 class="heading--h2">01. Conséquences positives</h2>
+            <div class="impact-card">
+                <div class="image-box positive" id="positive-box"></div>
+                <div class="overlay">
+                    <p id="positive-text"></p>
+                </div>
+                <div class="controls">
+                    <button id="prev-positive" aria-label="Précédent">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 12H5M12 19l-7-7 7-7"/></svg>
+                    </button>
+                    <button id="next-positive" aria-label="Suivant">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+                    </button>
+                </div>
             </div>
-        </div>
-        <div class="controls">
-            <button id="prev-positive">Précédent</button>
-            <button id="next-positive">Suivant</button>
-        </div>
-    </section>
-    <section class="raceimpact">
-        <h2 class="heading--h2">02. Conséquences négatives</h2>
-        <div class="impact-card">
-            <div class="image-box negative" id="negative-box"></div>
-            <div class="overlay">
-                <p id="negative-text"></p>
+        </section>
+        <section class="raceimpact">
+            <h2 class="heading--h2">02. Conséquences négatives</h2>
+            <div class="impact-card">
+                <div class="image-box negative" id="negative-box"></div>
+                <div class="overlay">
+                    <p id="negative-text"></p>
+                </div>
+                <div class="controls">
+                    <button id="prev-negative" aria-label="Précédent">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 12H5M12 19l-7-7 7-7"/></svg>
+                    </button>
+                    <button id="next-negative" aria-label="Suivant">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+                    </button>
+                </div>
             </div>
-        </div>
-        <div class="controls">
-            <button id="prev-negative">Précédent</button>
-            <button id="next-negative">Suivant</button>
-        </div>
-    </section>
-    <section class="pages">
-        <h2 class="heading--h2">Autre page</h2>
-        <a href="racecareer.html" class="pages__link js-transition">Vers Race career</a>
-    </section>
+        </section>
+        <section class="pages">
+            <a href="racecareer.html" class="pages__link js-transition">Vers Race career</a>
+        </section>
+    </main>
     <footer class="footer">
         <ul class="footer__infos">
             <li><a href="casestudy.html" class="footer__casestudy" id="casestudy">Case study</a></li>
