@@ -47,6 +47,7 @@
     color: $c-text-b;
     text-decoration: none;
     font-size: $size-text-t;
+    transition: color 0.3s ease-in-out, transform 0.2s ease;
     &.active{
       color: $c-f1;
       text-decoration: underline;
@@ -77,6 +78,7 @@
     font-size: 2rem;
     text-decoration: none;
     color: black;
+    transition: color 0.3s ease-in-out, transform 0.2s ease;
   }
 }
 
@@ -109,6 +111,7 @@
   & a{
     color: black;
     text-decoration: none;
+    transition: color 0.3s ease-in-out, transform 0.2s ease;
   }
 }
 .transition {
@@ -129,7 +132,6 @@
     height: 80vh;
   }
   .pages{
-    margin-left: 20px;
     gap: 5px;
     flex-direction: row;
     justify-content: center;
@@ -160,6 +162,13 @@
   .menu__el a {
     font-size: 2.5rem;
   }
+  .menu__el {
+  &:hover a {
+    color: $c-f1;
+    text-shadow: 0 0 5px rgba(248, 0, 0, 0.7);
+    transform: translateY(-2px);
+  }
+}
   .btn-retour{
     top: 50px;
   }
