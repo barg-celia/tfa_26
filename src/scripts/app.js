@@ -8,7 +8,7 @@ if (positiveBox){
       image: "/projets/tfa/assets/img/CP1.jpg",
     },
     {
-      text : "<strong class='highlight'>Nouveau talent détectés </strong> grâce au IA qui analyse les performances, de vrais professionnel viennent du virtuel sans passer par les circuits traditionnels et le parcours habituel du karting puis formule 4, formule 3, formule 2 et puis formule 1. Il y a une valorisation des talents",
+      text : "<strong class='highlight'>Nouveau talent détectés </strong> Grâce aux IA qui analyse les performances, de vrais professionnel viennent du virtuel sans passer par les circuits traditionnels et le parcours habituel du karting puis formule 4, formule 3, formule 2 et puis formule 1. Il y a une valorisation des talents",
       image : "/projets/tfa/assets/img/CP2.jpg",
     },
     {
