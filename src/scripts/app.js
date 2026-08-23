@@ -4,30 +4,30 @@ if (positiveBox){
 
   const positiveItems = [
     {
-      text : "Expérience unique, voire potentiellement addictive : elle s’apparente à un saut en parachute, dans la mesure où elle permet de démontrer son courage, de se dépasser et de tester sa capacité à gérer le stress. Elle peut aussi générer des codes sociaux, en devenant une étape presque incontournable — un peu comme l’obtention du permis de conduire aujourd’hui",
-      image: "/projets/tfa/assets/img/CP1.jpg",
+      text : "<strong class='highlight'>Expérience unique</strong> L’expérience est comparable à un saut en parachute car ça permet de prouver le courage, le dépassement de soi, la capacité a gérer le stress, ça peut créer des codes sociaux car participer l’expérience devient un passage quasi obligatoire comme le permis à l’heure actuelle",
+      image: "../assets/img/CP1.jpg",
     },
     {
-      text : "Nouveaux talents détectés grâce aux simulations : l’IA analyse les performances et permet à de véritables professionnels d’émerger depuis le virtuel, sans passer par les circuits traditionnels (karting, puis Formule 4, Formule 3, Formule 2 et enfin Formule 1). Cela contribue à une nouvelle forme de valorisation des talent",
+      text : "<strong class='highlight'>Nouveau talent détectés </strong> grâce au IA qui analyse les performances, de vrais professionnel viennent du virtuel sans passer par les circuits traditionnels et le parcours habituel du karting puis formule 4, formule 3, formule 2 et puis formule 1. Il y a une valorisation des talents",
       image : "/projets/tfa/assets/img/CP2.jpg",
     },
     {
-      text : "Création de nouveaux métiers : de nouvelles professions pourraient émerger, comme des coachs mentaux spécialisés dans l’accompagnement des utilisateurs de simulateurs afin de les aider à gérer le stress et la pression. On pourrait également voir apparaître des designers d’expériences immersives dans d’autres domaines. Cette évolution favoriserait aussi le développement des technologies",
+      text : "<strong class='highlight'>Création de nouveaux métiers</strong> De nouvelles professions pourraient émerger, comme des coachs mentaux spécialisés dans l’accompagnement des utilisateurs de simulateurs afin de les aider à gérer le stress et la pression. On pourrait également voir apparaître des designers d’expériences immersives dans d’autres domaines. Cette évolution favoriserait aussi le développement des technologies",
       image : "/projets/tfa/assets/img/CP3.jpg",
     },
   ];
   
   const negativeItems = [
     {
-      text : "Comparaison avec les pilotes réels : les utilisateurs sont classés et comparés aux vrais pilotes, ce qui peut entraîner une baisse de confiance en soi et une forte pression. Certains peuvent se dire qu’ils veulent atteindre le niveau de pilotes comme Lando Norris. Au-delà de cette comparaison, une hiérarchie sociale peut aussi se créer, les utilisateurs étant jugés en fonction de leurs performances",
+      text : "<strong class='highlight'>Comparaison avec les pilotes réels</strong> Les utilisateurs sont classés et comparés aux vrais pilotes, ce qui peut entraîner une baisse de confiance en soi et une forte pression. Certains peuvent se dire qu’ils veulent atteindre le niveau de pilotes comme Lando Norris. Au-delà de cette comparaison, une hiérarchie sociale peut aussi se créer, les utilisateurs étant jugés en fonction de leurs performances",
       image : "/projets/tfa/assets/img/CN1.jpg",
     },
     {
-      text : "Grâce à des simulateurs très performants, certains utilisateurs peuvent délaisser leurs autres activités pour retrouver ces fortes sensations. Ils cherchent alors en permanence des sensations intenses et la performance, ce qui peut entraîner une forme de dépendance",
+      text : "<strong class='highlight'>Addiction</strong>Grâce à des simulateurs très performants, certains utilisateurs peuvent délaisser leurs autres activités pour retrouver ces fortes sensations. Ils cherchent alors en permanence des sensations intenses et la performance, ce qui peut entraîner une forme de dépendance",
       image : "/projets/tfa/assets/img/CN2.jpg",
     },
     {
-      text : "Aspect social : à long terme, les utilisateurs pourraient vivre cette expérience depuis leur domicile, ce qui risquerait de les isoler des interactions sociales. Ils pourraient également réduire leurs activités sportives, entraînant une plus grande sédentarité. Avec des simulations accessibles en permanence, certains seraient tentés d’en abuser, ce qui pourrait devenir problématique sur le plan mental en cas d’usage excessif",
+      text : "<strong class='highlight'>Aspect social</strong>Sur le long terme, les utilisateurs pourraient vivre cette expérience depuis leur domicile, ce qui risquerait de les isoler des interactions sociales. Ils pourraient également réduire leurs activités sportives, entraînant une plus grande sédentarité. Avec des simulations accessibles en permanence, certains seraient tentés d’en abuser, ce qui pourrait devenir problématique sur le plan mental en cas d’usage excessif",
       image : "/projets/tfa/assets/img/CN3.jpg",
     },
   ];
@@ -45,18 +45,9 @@ if (positiveBox){
     const nextBtn = document.getElementById(nextId); // récuperer le btn next
     
     function updateContent() { // fct pour changer l'affichage
-      text.textContent = items[index].text; // changer le text
+      text.innerHTML = items[index].text; // changer le text
       box.style.backgroundImage = `url("${items[index].image}")`; // changer l'image
     }
-    
-    // btn pour afficher ou masquer le text
-    btn.addEventListener("click", () => {
-      overlay.classList.toggle("active");
-      
-      btn.textContent = overlay.classList.contains("active")
-      ? "Cacher"
-      : "Afficher";
-    });
     
     // btn next 
     nextBtn.addEventListener("click", () => {
