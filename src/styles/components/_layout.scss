@@ -183,7 +183,7 @@
     left: 0;
     right: auto;
     width: 100%;
-    height: auto;
+    height: 60px;
     margin: 0;
     padding: 1rem;
     flex-direction: row;
@@ -191,6 +191,10 @@
     transform: none;
     transition: none;
     background-color: $c-text;
+    justify-content: center;
+  }
+  .btn-retour{
+    top: 50px;
   }
   .btn-retour:hover{
     background-color: #dad9d9;
@@ -231,5 +235,8 @@
       max-width: 300px;
       height: 200px;
     }
+  }
+  .btn-retour{
+    top: 80px;
   }
 }
