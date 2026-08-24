@@ -5,30 +5,30 @@ if (positiveBox){
   const positiveItems = [
     {
       text : "<strong class='highlight'>Expérience unique</strong> L’expérience est comparable à un saut en parachute car ça permet de prouver le courage, le dépassement de soi, la capacité a gérer le stress, ça peut créer des codes sociaux car participer l’expérience devient un passage quasi obligatoire comme le permis à l’heure actuelle",
-      image: "/projets/tfa/assets/img/CP1.jpeg",
+      image: "https://celia-bargoin.be/projets/tfa/assets/img/CP1.jpeg",
     },
     {
       text : "<strong class='highlight'>Nouveau talent détectés </strong> Grâce aux IA qui analyse les performances, de vrais professionnel viennent du virtuel sans passer par les circuits traditionnels et le parcours habituel du karting puis formule 4, formule 3, formule 2 et puis formule 1. Il y a une valorisation des talents",
-      image : "/projets/tfa/assets/img/CP2.jpeg",
+      image : "https://celia-bargoin.be/projets/tfa/assets/img/CP2.jpeg",
     },
     {
       text : "<strong class='highlight'>Création de nouveaux métiers</strong> De nouvelles professions pourraient émerger, comme des coachs mentaux spécialisés dans l’accompagnement des utilisateurs de simulateurs afin de les aider à gérer le stress et la pression. On pourrait également voir apparaître des designers d’expériences immersives dans d’autres domaines. Cette évolution favoriserait aussi le développement des technologies",
-      image : "/projets/tfa/assets/img/CP3.jpeg",
+      image : "https://celia-bargoin.be/projets/tfa/assets/img/CP3.jpeg",
     },
   ];
   
   const negativeItems = [
     {
       text : "<strong class='highlight'>Comparaison avec les pilotes réels</strong> Les utilisateurs sont classés et comparés aux vrais pilotes, ce qui peut entraîner une baisse de confiance en soi et une forte pression. Certains peuvent se dire qu’ils veulent atteindre le niveau de pilotes comme Lando Norris. Au-delà de cette comparaison, une hiérarchie sociale peut aussi se créer, les utilisateurs étant jugés en fonction de leurs performances",
-      image : "/projets/tfa/assets/img/CN1.jpeg",
+      image : "https://celia-bargoin.be/projets/tfa/assets/img/CN1.jpeg",
     },
     {
       text : "<strong class='highlight'>Addiction</strong>Grâce à des simulateurs très performants, certains utilisateurs peuvent délaisser leurs autres activités pour retrouver ces fortes sensations. Ils cherchent alors en permanence des sensations intenses et la performance, ce qui peut entraîner une forme de dépendance",
-      image : "/projets/tfa/assets/img/CN2.jpeg",
+      image : "https://celia-bargoin.be/projets/tfa/assets/img/CN2.jpeg",
     },
     {
       text : "<strong class='highlight'>Aspect social</strong>Sur le long terme, les utilisateurs pourraient vivre cette expérience depuis leur domicile, ce qui risquerait de les isoler des interactions sociales. Ils pourraient également réduire leurs activités sportives, entraînant une plus grande sédentarité. Avec des simulations accessibles en permanence, certains seraient tentés d’en abuser, ce qui pourrait devenir problématique sur le plan mental en cas d’usage excessif",
-      image : "/projets/tfa/assets/img/CN3.jpeg",
+      image : "https://celia-bargoin.be/projets/tfa/assets/img/CN3.jpeg",
     },
   ];
   
